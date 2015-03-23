@@ -6,7 +6,7 @@ Item {
     width: 980
     height: 710
 
-    property alias button3: button3
+
     property alias button2: button2
     property alias button1: button1
 
@@ -186,9 +186,4 @@ GroupBox {
             title: qsTr("Visual Pane")
         }
     }
-    states: [
-        State {
-            name: "State1"
-        }
-    ]
 }
