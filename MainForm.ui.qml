@@ -7,8 +7,10 @@ Item {
     height: 710
 
 
-    property alias button2: button2
-    property alias button1: button1
+    property alias clear_b: clear_b
+    property alias visualize_b: visualize_b
+    property alias subreddit: subreddit
+    property alias keyword: keyword
 
     Rectangle {
         id: rectangle1
@@ -40,7 +42,7 @@ GroupBox {
             title: qsTr("")
 
             TextField {
-                id: textField1
+                id: subreddit
                 x: 68
                 y: 88
                 width: 119
@@ -93,7 +95,7 @@ GroupBox {
             }
 
             TextField {
-                id: textField2
+                id: keyword
                 x: 68
                 y: 249
                 width: 119
@@ -148,7 +150,7 @@ GroupBox {
             }
 
             Button {
-                id: button1
+                id: visualize_b
                 x: 103
                 y: 400
                 width: 84
@@ -157,7 +159,7 @@ GroupBox {
             }
 
             Button {
-                id: button2
+                id: clear_b
                 x: 0
                 y: 400
                 width: 84
@@ -179,7 +181,7 @@ GroupBox {
 
         GroupBox {
             id: groupBox3
-            x: 8
+            x: 0
             y: 8
             width: 745
             height: 694

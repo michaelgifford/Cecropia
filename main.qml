@@ -4,10 +4,14 @@ import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
 
 ApplicationWindow {
-    title: qsTr("Hello World")
+    title: qsTr("Reddt Visualizer")
     width: 640
     height: 480
     visible: true
+
+    signal submitUserInput(string num1, string num2)
+
+
 
     menuBar: MenuBar {
         Menu {
@@ -23,14 +27,25 @@ ApplicationWindow {
         }
     }
 
+
     MainForm {
+
+
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.leftMargin: 0
         anchors.topMargin: 0
         anchors.fill: parent
-        button1.onClicked: messageDialog.show(qsTr("test"))
-        button2.onClicked: messageDialog.show(qsTr("Button 2 pressed"))
+
+        visualize_b.onClicked:
+        {
+            submitUserInput(subreddit.text, keyword.text)
+        }
+
+        clear_b.onClicked: messageDialog.show(qsTr("test"))
+
+
+
 
     }
 
