@@ -42,7 +42,12 @@ ApplicationWindow {
             submitUserInput(subreddit.text, keyword.text)
         }
 
-        clear_b.onClicked: messageDialog.show(qsTr("test"))
+        clear_b.onClicked:
+        {
+            subreddit.text = ""
+            keyword.text = ""
+            submitUserInput(subreddit.text, keyword.text)
+        }
 
 
 
