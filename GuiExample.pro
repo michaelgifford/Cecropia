@@ -3,7 +3,9 @@ TEMPLATE = app
 QT += qml quick widgets
 
 SOURCES += main.cpp \
-    handleinput.cpp
+    handleinput.cpp \
+    redditfetcher.cpp \
+    redditdata.cpp
 
 RESOURCES += qml.qrc
 
@@ -14,4 +16,6 @@ QML_IMPORT_PATH =
 include(deployment.pri)
 
 HEADERS += \
-    handleinput.h
+    handleinput.h \
+    redditfetcher.h \
+    redditdata.h

@@ -9,6 +9,7 @@ ALVIN XU
 #include <QObject>
 #include <QDebug>
 #include <QNetworkReply>
+#include "redditdata.h"
 
 class HandleInput : public QObject
 {
@@ -24,19 +25,8 @@ public slots:
     void handlesubmitUserInput(const QString &num1, const QString &num2);
 
 private slots:
-    void parseResponse(QNetworkReply *);
+    void handleData(RedditData);
 
-};
-
-/**
- * @brief The RedditData class stores a response from the reddit API server
- */
-class RedditData
-{
-    public:
-        int numPosts;
-        int score;
-        int numComments;
 };
 
 #endif // HANDLEINPUT_H
