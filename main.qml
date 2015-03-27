@@ -5,8 +5,8 @@ import QtQuick.Dialogs 1.2
 
 ApplicationWindow {
     title: qsTr("Reddt Visualizer")
-    width: 979
-    height: 710
+    width: 1440
+    height: 820
     visible: true
 
     signal submitUserInput(string num1, string num2)
@@ -15,9 +15,11 @@ ApplicationWindow {
     function sendGraph(nscore, numposts, numcomments){
         messageDialog.show(nscore)
 
-        score.height = 500
-        posts.height = (500*numposts/nscore)
-        comments.height= (500*numcomments/nscore)
+        posts.height = 500
+        score.height = (500*nscore/numposts)
+        comments.height= (500*nscore/numcomments*100)
+
+
 
 
     }
@@ -43,29 +45,41 @@ ApplicationWindow {
 
     MainForm {
 
-
-
-
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
         anchors.leftMargin: 0
         anchors.topMargin: 0
         anchors.fill: parent
 
+        add_b.onClicked:
+        {
+            messageDialog.show(qsTr("add!"));
+        }
+
+
+
+        clear_b.onClicked:
+        {
+            subreddit.text = ""
+            keyword.text = ""
+            submitUserInput(subreddit.text, keyword.text)
+        }
+
+
         visualize_b.onClicked:
         {
             submitUserInput(subreddit.text, keyword.text)
-           // sendGraph(1, 1, 1)
+            key_display.text = keyword.text
         }
     /*    function superGraph(nscore, numposts, numcomments){
 
         } */
         Rectangle {
             id: rectangle2
-            x: 219
+            x: 260
             y: 0
-            width: 761
-            height: 710
+            width: 1440-260
+            height: 840
             color: "#ffffff"
 
             GroupBox {
@@ -85,14 +99,14 @@ ApplicationWindow {
                     height: 590
 
                     Rectangle {
-                        id: score
+                        id: posts
                         width: 200
                         height: 5
                         color: "red"
                     }
 
                     Rectangle {
-                        id: posts
+                        id: score
                         width: 200
                         height: 5
                         color: "blue"
@@ -111,13 +125,6 @@ ApplicationWindow {
         }
 
 
-
-        clear_b.onClicked:
-        {
-            subreddit.text = ""
-            keyword.text = ""
-            submitUserInput(subreddit.text, keyword.text)
-        }
 
 
 
