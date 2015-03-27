@@ -2,11 +2,14 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
 
+
 Item {
     width: 980
     height: 710
 
-
+   // property alias score: score
+   // property alias comments: comments
+   // property alias posts: posts
     property alias clear_b: clear_b
     property alias visualize_b: visualize_b
     property alias subreddit: subreddit
@@ -34,10 +37,10 @@ GroupBox {
 
 GroupBox {
     id: groupBox1
-            x: 8
-            y: 8
-            width: 203
-            height: 694
+            x: 0
+            y: 0
+            width: 218
+            height: 710
             flat: false
             title: qsTr("")
 
@@ -62,15 +65,6 @@ GroupBox {
                 font.pixelSize: 19
             }
 
-            Image {
-                id: image1
-                x: -9
-                y: 0
-                width: 43
-                height: 42
-                fillMode: Image.PreserveAspectFit
-                source: "img/reddit-alien.png"
-            }
 
             Label {
                 id: label1
@@ -171,21 +165,5 @@ GroupBox {
 
     }
 
-    Rectangle {
-        id: rectangle2
-        x: 219
-        y: 0
-        width: 761
-        height: 710
-        color: "#ffffff"
 
-        GroupBox {
-            id: groupBox3
-            x: 0
-            y: 8
-            width: 745
-            height: 694
-            title: qsTr("Visual Pane")
-        }
-    }
 }

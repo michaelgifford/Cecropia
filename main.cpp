@@ -36,11 +36,8 @@ int main(int argc, char *argv[])
     // a QVariant.
 
 
-    QObject::connect(&handleinput, SIGNAL(setAnswer(QVariant, QVariant)), //ignore for now
-                         window, SLOT(setAnswer(QVariant, QVariant)));
-
-    QObject::connect(&handleinput, SIGNAL(setError(QVariant)), //ignore for now
-                         window, SLOT(setError(QVariant)));
+    QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant)),
+                         window, SLOT(sendGraph(QVariant, QVariant, QVariant)));
 
     return app.exec();
 }

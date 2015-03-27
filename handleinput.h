@@ -18,8 +18,7 @@ public:
     explicit HandleInput(QObject *parent = 0);
 
 signals:  //ignore for now
-    void setAnswer(QVariant numerator, QVariant denominator);
-    void setError(QVariant error_code);
+    void sendGraph(QVariant nscore, QVariant numposts, QVariant numcomments);
 
 public slots:
     void handlesubmitUserInput(const QString &num1, const QString &num2);
