@@ -12,6 +12,7 @@ public:
     int numPosts;
     int score;
     int numComments;
+    int numSubscribers;
 };
 
 #endif // REDDITDATA_H
