@@ -27,20 +27,24 @@ int main(int argc, char *argv[])
     QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
 
     // connect our QML signal to our C++ slot
-    QObject::connect(window, SIGNAL(submitUserInput(QString, QString)),
-                         &handleinput, SLOT(handlesubmitUserInput(QString, QString)));
+
+    QObject::connect(window, SIGNAL(submitSubreddit(QString)),
+                         &handleinput, SLOT(handlesubmitSubreddit(QString)));
+
+    QObject::connect(window, SIGNAL(submitKeyword(QString)),
+                         &handleinput, SLOT(handlesubmitKeyword(QString)));
+
+
 
 
     // connect our C++ signal to our QML slot
     // NOTE: if we want to pass an parameter to our QML slot, it has to be
     // a QVariant.
 
-
-    QObject::connect(&handleinput, SIGNAL(setAnswer(QVariant, QVariant)), //ignore for now
-                         window, SLOT(setAnswer(QVariant, QVariant)));
-
-    QObject::connect(&handleinput, SIGNAL(setError(QVariant)), //ignore for now
-                         window, SLOT(setError(QVariant)));
+/*
+    QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant)),
+                         window, SLOT(sendGraph(QVariant, QVariant, QVariant)));
+                         */
 
     return app.exec();
 }

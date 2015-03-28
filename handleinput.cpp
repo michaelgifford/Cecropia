@@ -8,6 +8,7 @@ ALVIN XU
 #include "redditfetcher.h"
 
 #include <QString>
+#include <Qvector>
 #include <QDebug>
 #include <QByteArray>
 
@@ -16,19 +17,57 @@ HandleInput::HandleInput(QObject *parent) : QObject(parent)
 
 }
 
+QVector<QString> subreddit_vector(0);
 
-void HandleInput::handlesubmitUserInput(const QString &num1, const QString &num2)
+
+void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
+{
+    qDebug() << subreddit_data;
+
+    subreddit_vector.append(subreddit_data);
+
+    qDebug() << subreddit_vector;
+
+}
+
+void HandleInput::handlesubmitKeyword(const QString keyword_data)
+{
+    qDebug() << "keyword_data1";
+
+    qDebug() << keyword_data;
+
+    HandleInput::visualize(keyword_data);
+}
+
+
+void HandleInput::visualize(const QString keyword_data)
 {
     RedditFetcher *fetcher = new RedditFetcher(this);
-    connect(fetcher, SIGNAL(finished(RedditData)),
-            this, SLOT(handleData(RedditData)));
-    fetcher->getData(num1, num2);
+
+    fetcher->setKeyword(keyword_data);
+    fetcher->setSubreddits(subreddit_vector);
+
+    connect(fetcher, SIGNAL(finished(QMap<QString, RedditData>)),
+              this, SLOT(handleData(QMap<QString, RedditData>)));
+
+    fetcher->getStats();
 }
 
-void HandleInput::handleData(RedditData data)
+
+
+void HandleInput::handleData(QMap<QString, RedditData> data)
 {
-    qDebug() << data.score;
+    for(int i=0; i<subreddit_vector.size(); i++)
+    {
+        qDebug() << data[subreddit_vector[i]].score;
+    }
 }
+
+
+
+
+
+
 
 
 

@@ -7,7 +7,9 @@ ALVIN XU
 #define HANDLEINPUT_H
 
 #include <QObject>
+#include <QString>
 #include <QDebug>
+#include <QVector>
 #include <QNetworkReply>
 #include "redditdata.h"
 
@@ -18,14 +20,16 @@ public:
     explicit HandleInput(QObject *parent = 0);
 
 signals:  //ignore for now
-    void setAnswer(QVariant numerator, QVariant denominator);
-    void setError(QVariant error_code);
+    void sendGraph(QVariant nscore, QVariant numposts, QVariant numcomments);
 
 public slots:
-    void handlesubmitUserInput(const QString &num1, const QString &num2);
+
+    void handlesubmitSubreddit(const QString subreddit_data);
+    void handlesubmitKeyword(const QString keyword_data);
 
 private slots:
-    void handleData(RedditData);
+    void visualize(const QString keyword_data);
+    void handleData(QMap<QString, RedditData> data);
 
 };
 

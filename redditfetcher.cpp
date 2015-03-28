@@ -30,10 +30,12 @@ RedditFetcher::~RedditFetcher()
 
 void RedditFetcher::setKeyword(const QString &keyword) {
     this->keyword = keyword;
+    qDebug() << this->keyword <<"2";
 }
 
 void RedditFetcher::setSubreddits(QVector<QString> subreddits) {
     this->subreddits = subreddits;
+    qDebug() << this->subreddits <<"2";
 }
 
 void RedditFetcher::getStats()
@@ -58,6 +60,7 @@ void RedditFetcher::getStats()
     connect(manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(normalizeStats(QNetworkReply*)));
     manager->get(QNetworkRequest(url));
+    qDebug() << "donestats";
 }
 
 void RedditFetcher::normalizeStats(QNetworkReply *reply)
@@ -68,6 +71,7 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
 
     QMap<QString, RedditData> response;
 
+    qDebug() << "test";
     // loop through subreddits
     for (int i = 0; i < this->subreddits.size(); i++) {
         RedditData redditData;
@@ -80,4 +84,9 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
     }
 
     emit finished(response);
+
+
+
+
+
 }
