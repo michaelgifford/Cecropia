@@ -35,8 +35,6 @@ int main(int argc, char *argv[])
                          &handleinput, SLOT(handlesubmitKeyword(QString)));
 
 
-
-
     // connect our C++ signal to our QML slot
     // NOTE: if we want to pass an parameter to our QML slot, it has to be
     // a QVariant.
