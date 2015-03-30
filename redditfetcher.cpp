@@ -28,12 +28,14 @@ RedditFetcher::~RedditFetcher()
 
 }
 
-void RedditFetcher::setKeyword(const QString &keyword) {
+void RedditFetcher::setKeyword(const QString &keyword)
+{
     this->keyword = keyword;
     qDebug() << this->keyword <<"2";
 }
 
-void RedditFetcher::setSubreddits(QVector<QString> subreddits) {
+void RedditFetcher::setSubreddits(QVector<QString> subreddits)
+{
     this->subreddits = subreddits;
     qDebug() << this->subreddits <<"2";
 }
