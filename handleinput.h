@@ -19,6 +19,9 @@ class HandleInput : public QObject
 public:
     explicit HandleInput(QObject *parent = 0);
 
+protected:
+    bool is_sub;
+
 signals:  //ignore for now
     void sendGraph(QVariant nscore, QVariant numposts, QVariant numcomments);
     void setSubn(QVariant sub_text, QVariant subn);

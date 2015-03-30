@@ -35,16 +35,22 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
         }
         else
         {
-   //         if(checkSub(subreddit_data))  checks if subreddit exists
-    //        {
+              is_sub = 1;
+
+              /*is_sub is a protected bool variable.
+               * do you think you can create a function below that will change is_sub to the value of finishedSub
+               * */
+
+               if(is_sub)
+              {
                 subreddit_vector.append(subreddit_data.toLower());
 
-      /*        }
+             }
               else
                {
                 //EXCEPTION HANDLE!!
                  //return that subreddit does not exist
-              } */
+              }
         }
 
 
