@@ -66,40 +66,41 @@ ApplicationWindow {
             score1.width = score2.width = score3.width = score4.width = 1
             density1.width = density2.width = density3.width = density4.width = 1
             comments1.width = comments2.width = comments3.width = comments4.width = 1
-        //    loading.text = ""
+            //loading.text = ""
         }
 
 
         function graph1(nsubs, nscore, numposts, numcomments){
 
             cleargraph()
+            loading_box.text = ""
 
-            score1.width = nscore/25
-            density1.width = nscore/nsubs*100
+            score1.width = nscore/20
+            density1.width = nscore/nsubs*700
             comments1.width = numcomments/50
 
         }
 
         function graph2(nsubs, nscore, numposts, numcomments){
 
-            score2.width = nscore/25
-            density2.width = nscore/nsubs*100
+            score2.width = nscore/20
+            density2.width = nscore/nsubs*700
             comments2.width = numcomments/50
 
         }
         function graph3(nsubs, nscore, numposts, numcomments){
 
-            score3.width = nscore/25
-            density3.width = nscore/nsubs*100
-            comments3.width = numcomments/25
+            score3.width = nscore/20
+            density3.width = nscore/nsubs*700
+            comments3.width = numcomments/20
 
         }
 
         function graph4(nsubs, nscore, numposts, numcomments){
 
-            score4.width = nscore/25
-            density4.width = nscore/nsubs*100
-            comments4.width = numcomments/25
+            score4.width = nscore/20
+            density4.width = nscore/nsubs*700
+            comments4.width = numcomments/20
         }
 
         function errorbox(errmsg){
@@ -177,8 +178,8 @@ ApplicationWindow {
 
 
             submitKeyword(keyword.text)
-       //     loading.text("LOADING...")
-         //   key_display.text = keyword.text.toLowerCase()
+            loading_box.text = "LOADING..."
+            key_display.text = keyword.text.toLowerCase()
 
             //donedata();
 
@@ -194,7 +195,7 @@ ApplicationWindow {
             removeSubreddit(sub1.text)
             keyword.text = ""
             subreddit.text = ""
-          //  key_display.text = ""
+            key_display.text = ""
             cleargraph()
         }
 

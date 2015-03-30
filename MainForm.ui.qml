@@ -15,7 +15,7 @@ Item {
     property alias clear_b: clear_b
     property alias visualize_b: visualize_b
 
-   // property alias key_display: key_display
+    //property alias key_display: key_display
 
     property alias sub1: sub1
     property alias sub2: sub2
@@ -46,7 +46,7 @@ Item {
 
     property alias error_msgs: error_msgs
 
-  //  property alias loading: loading
+    property alias loading_box: loading_box
 
 
 //side panel start
@@ -413,6 +413,28 @@ GroupBox {
                         color: "orange"
                     }
                 }
+            }
+
+            Text {
+                id: loading_box
+                x: 462
+                y: 404
+                width: 155
+                height: 110
+                text: qsTr("")
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 30
+            }
+
+            Text {
+                id: key_display
+                x: 631
+                y: 27
+                width: 226
+                height: 82
+                text: qsTr("")
+                font.pixelSize: 20
             }
 
 
