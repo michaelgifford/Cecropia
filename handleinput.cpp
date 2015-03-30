@@ -80,11 +80,14 @@ void HandleInput::printSubs(const QVector<QString> print_list)
         qDebug() << "printing list is empty";
         emit setSubn("", 0);
     }
-    for(int i = 0; i < print_list.size(); i++)
+    for(int i = 0; i < 4; i++)
     {
-        qDebug() << "printing stuff" << i;
+        if (i >= print_list.size())
+            emit setSubn("", i+1);
+        else
+            emit setSubn(print_list[i], i+1);
 
-        emit setSubn(print_list[i], i+1);
+        qDebug() << "printing stuff" << i+1;
     }
 }
 

@@ -15,9 +15,7 @@ ApplicationWindow {
 
     signal submitKeyword(string keyword_data)
 
-    signal submitSubreddit(string subreddit_data)
     signal removeSubreddit(string subreddit_remove)
-
 
     function grapher(gsub, nscore, numposts, numcomments){
         VarScript.sub1score = nscore
@@ -28,43 +26,6 @@ ApplicationWindow {
        // messageDialog.show(qsTr("GRAPH!"));
 
     }
-
-    function setSubn(text, number){
-
-
-
-        switch(number) {
-            case 0:
-                VarScript.sub1text = ""
-                VarScript.sub2text = ""
-                VarScript.sub3text = ""
-                VarScript.sub4text = ""
-                break;
-            case 1:
-                VarScript.sub1text = text
-                break;
-            case 2:
-                VarScript.sub2text = text
-                break;
-            case 3:
-                VarScript.sub3text = text
-                break;
-            case 4:
-                VarScript.sub4text = text
-                break;
-        }
-
-    }
-
-
-
-
-
-
-
-
-
-
 
     menuBar: MenuBar {
         Menu {
@@ -82,8 +43,32 @@ ApplicationWindow {
 
 
     MainForm {
+        signal submitSubreddit(string subreddit_data)
+        objectName: "mainForm"
 
-
+        function setSubn(text, number){
+            console.log("Set text: ", text, " to ", number);
+            switch(number) {
+                case 0:
+                    sub1.text = ""
+                    sub2.text = ""
+                    sub3.text = ""
+                    sub4.text = ""
+                    break;
+                case 1:
+                    sub1.text = text
+                    break;
+                case 2:
+                    sub2.text = text
+                    break;
+                case 3:
+                    sub3.text = text
+                    break;
+                case 4:
+                    sub4.text = text
+                    break;
+            }
+        }
 
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
@@ -96,15 +81,7 @@ ApplicationWindow {
         add_b.onClicked:
         {
             submitSubreddit(subreddit.text)
-
-            sub1.text = VarScript.sub1text
-            sub2.text = VarScript.sub2text
-            sub3.text = VarScript.sub3text
-            sub4.text = VarScript.sub4text
         }
-
-
-
 
         removesub1.onClicked:
         {
