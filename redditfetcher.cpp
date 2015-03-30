@@ -31,20 +31,18 @@ RedditFetcher::~RedditFetcher()
 void RedditFetcher::setKeyword(const QString &keyword)
 {
     this->keyword = keyword;
-    qDebug() << this->keyword <<"2";
 }
 
 void RedditFetcher::setSubreddits(QVector<QString> subreddits)
 {
     this->subreddits = subreddits;
-    qDebug() << this->subreddits <<"2";
 }
 
 void RedditFetcher::getStats()
 {
     // error handle (just return for now)
-    if (this->subreddits.size() > 4)
-        return; // TODO: error handle this issue!
+   // if (this->subreddits.size() > 4)
+   //     return; // TODO: error handle this issue!
 
     // build query string from params
     QUrlQuery query;
@@ -62,7 +60,7 @@ void RedditFetcher::getStats()
     connect(manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(normalizeStats(QNetworkReply*)));
     manager->get(QNetworkRequest(url));
-    qDebug() << "donestats";
+    qDebug() << "make request";
 }
 
 void RedditFetcher::normalizeStats(QNetworkReply *reply)
@@ -73,7 +71,6 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
 
     QMap<QString, RedditData> response;
 
-    qDebug() << "test";
     // loop through subreddits
     for (int i = 0; i < this->subreddits.size(); i++) {
         RedditData redditData;
@@ -84,7 +81,7 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
         redditData.numSubscribers = stats.value("number_of_subscribers").toInt();
         response[this->subreddits.at(i)] = redditData;
     }
-
+    qDebug() << "done requests";
     emit finished(response);
 }
 

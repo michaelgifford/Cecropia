@@ -21,6 +21,8 @@ public:
 
 signals:  //ignore for now
     void sendGraph(QVariant nscore, QVariant numposts, QVariant numcomments);
+    void setSubn(QVariant sub_text, QVariant subn);
+
 
 public slots:
 
@@ -29,6 +31,7 @@ public slots:
 
 private slots:
     void visualize(const QString keyword_data);
+    void printSubs(const QVector<QString>);
     void handleData(QMap<QString, RedditData> data);
 
 };
