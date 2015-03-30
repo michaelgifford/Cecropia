@@ -105,8 +105,8 @@ Item {
                     text: qsTr("+")
                 }
 
-Text {
-    id: sub1
+         Text {
+                id: sub1
                        x: 0
                        y: 56
                        width: 212
@@ -133,6 +133,7 @@ Text {
                        width: 212
                        height: 20
                        color: "#ffffff"
+
                        text: qsTr("subreddit2")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12

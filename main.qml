@@ -8,6 +8,7 @@ import "global_item_variables.js" as VarScript
 
 
 ApplicationWindow {
+    id: mainscreen
     title: qsTr("Reddt Visualizer")
     width: 1440
     height: 820
@@ -24,13 +25,13 @@ ApplicationWindow {
        // messageDialog.show(qsTr("GRAPH!"));
 
     }
-
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
             MenuItem {
                 text: qsTr("&Open")
                 onTriggered: messageDialog.show(qsTr("Open action triggered"));
+
             }
             MenuItem {
                 text: qsTr("E&xit")
@@ -90,8 +91,7 @@ ApplicationWindow {
             sub2.text = ""
             sub3.text = ""
             sub4.text = ""
-
-           // messageDialog.show(qsTr("REMOVE"));
+            // messageDialog.show(qsTr("REMOVE"));
             removeSubreddit(subText)
         }
 
