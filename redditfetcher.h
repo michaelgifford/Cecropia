@@ -26,13 +26,14 @@ public:
 private:
     QVector<QString> subreddits;
     QString keyword;
+    QString subreddit;
 private slots:
     void normalizeStats(QNetworkReply *reply);
     void normalizeSub(QNetworkReply *reply);
 
 signals:
     void finished(QMap<QString, RedditData>);
-    void finishedSub(bool);
+    void finishedSub(const QString, bool);
 };
 
 #endif // REDDITFETCHER_H

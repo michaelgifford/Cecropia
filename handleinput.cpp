@@ -24,48 +24,39 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
 {
     qDebug() << "this is the subreddit passed in: " << subreddit_data;
 
-
-    //EXCEPTION HANDLE!!!
-    if(subreddit_vector.size() < 4){
-
-        if(subreddit_vector.contains(subreddit_data.toLower())){
-            //EXCEPTION HANDLE!!!
-            //return error: that subreddit is already added!
-            qDebug() << "that subreddit is already added!";
-        }
-        else
-        {
-              is_sub = 1;
-
-              /*is_sub is a protected bool variable.
-               * do you think you can create a function below that will change is_sub to the value of finishedSub
-               * */
-
-               if(is_sub)
-              {
-                subreddit_vector.append(subreddit_data.toLower());
-
-             }
-              else
-               {
-                //EXCEPTION HANDLE!!
-                 //return that subreddit does not exist
-              }
-        }
-
-
+    if(subreddit_vector.size() > 4) {
+        // TODO: display errors to the user (alvin)
+        qDebug() << "tried to add more than 4 subreddits";
+        return;
     }
 
+    if(subreddit_vector.contains(subreddit_data.toLower())) {
+        // TODO: display errors here
+        qDebug() << "that subreddit is already added!";
+        return;
+    }
+    // if we made it this far--check if it's a subreddit
 
-    else
-    {
-        qDebug() << "too many subreddits passed in";
+    RedditFetcher *fetcher = new RedditFetcher(this);
 
-        //call error function
+    connect(fetcher, SIGNAL(finishedSub(QString, bool)),
+              this, SLOT(receivedSubredditExists(QString,bool)));
+
+    qDebug() << "checking with Reddit if it exists..";
+    fetcher->checkSub(subreddit_data.toLower());
+}
+
+void HandleInput::receivedSubredditExists(QString subreddit, bool exists) {
+    if (!exists) {
+        // TODO: display errors here
+        qDebug() << "subreddit does not exist";
+        return;
     }
 
+    qDebug() << "it exists. add it to the vector and redraw";
+    subreddit_vector.append(subreddit);
+    // it exists, so add it and reprint the subs
     HandleInput::printSubs(subreddit_vector);
-
 }
 
 

@@ -97,6 +97,7 @@ void RedditFetcher::checkSub(QString subreddit)
     QNetworkAccessManager *manager = new QNetworkAccessManager(this);
     connect(manager, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(normalizeSub(QNetworkReply*)));
+    this->subreddit = subreddit;
     manager->get(QNetworkRequest(url));
 }
 
@@ -105,5 +106,5 @@ void RedditFetcher::normalizeSub(QNetworkReply *reply)
     QByteArray responseData = reply->readAll();
     QJsonObject jsonObj = QJsonDocument::fromJson(responseData).object();
 
-    emit finishedSub(jsonObj.value("exists").toBool());
+    emit finishedSub(this->subreddit, jsonObj.value("exists").toBool());
 }

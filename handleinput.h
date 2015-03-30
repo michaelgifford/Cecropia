@@ -37,6 +37,7 @@ private slots:
     void visualize(const QString keyword_data);
     void printSubs(const QVector<QString>);
     void handleData(QMap<QString, RedditData> data);
+    void receivedSubredditExists(const QString subreddit, bool exists);
 
 };
 
