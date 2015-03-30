@@ -24,9 +24,23 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
 {
     qDebug() << "this is the subreddit passed in: " << subreddit_data;
 
+
+    //EXCEPTION HANDLE!!!
     if(subreddit_vector.size() < 4){
-        subreddit_vector.append(subreddit_data);
+
+        if(subreddit_vector.contains(subreddit_data.toLower())){
+            //EXCEPTION HANDLE!!!
+            //return error: that subreddit is already added!
+            qDebug() << "that subreddit is already added!";
+        }
+        else
+        {
+            subreddit_vector.append(subreddit_data.toLower());
+        }
+
+
     }
+
     else
     {
         qDebug() << "too many subreddits passed in";
@@ -38,14 +52,32 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
 
 }
 
+
+void HandleInput::handleremoveSubreddit(const QString subreddit_remove)
+{
+    qDebug() << "this is the subreddit to remove: " << subreddit_remove;
+
+    subreddit_vector.removeAll(subreddit_remove);
+
+
+    HandleInput::printSubs(subreddit_vector);
+
+}
+
+
 void HandleInput::printSubs(const QVector<QString> print_list)
 {
     qDebug() << "this is the subreddits sent to the print list:" << print_list;
+    if (print_list.size() == 0)
+    {
+        qDebug() << "printing list is empty";
+        emit setSubn("", 0);
+    }
     for(int i = 0; i < print_list.size(); i++)
     {
-        qDebug() << "printing stuff";
+        qDebug() << "printing stuff" << i;
 
-        emit setSubn(print_list[i].toLower(), i+1);
+        emit setSubn(print_list[i], i+1);
     }
 }
 

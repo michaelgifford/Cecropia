@@ -16,6 +16,7 @@ ApplicationWindow {
     signal submitKeyword(string keyword_data)
 
     signal submitSubreddit(string subreddit_data)
+    signal removeSubreddit(string subreddit_remove)
 
 
     function sendGraph(nscore, numposts, numcomments){
@@ -24,10 +25,17 @@ ApplicationWindow {
 
     }
 
-
-
     function setSubn(text, number){
+
+
+
         switch(number) {
+            case 0:
+                VarScript.sub1text = ""
+                VarScript.sub2text = ""
+                VarScript.sub3text = ""
+                VarScript.sub4text = ""
+                break;
             case 1:
                 VarScript.sub1text = text
                 break;
@@ -41,10 +49,10 @@ ApplicationWindow {
                 VarScript.sub4text = text
                 break;
         }
-       // VarScript.sub1text= text
-        console.log(VarScript.sub1color)
 
     }
+
+
 
 
 
@@ -78,6 +86,8 @@ ApplicationWindow {
         anchors.topMargin: 0
         anchors.fill: parent
 
+
+
         add_b.onClicked:
         {
             submitSubreddit(subreddit.text)
@@ -87,6 +97,79 @@ ApplicationWindow {
             sub3.text = VarScript.sub3text
             sub4.text = VarScript.sub4text
         }
+
+
+
+
+        removesub1.onClicked:
+        {
+            VarScript.sub1text = ""
+            VarScript.sub2text = ""
+            VarScript.sub3text = ""
+            VarScript.sub4text = ""
+
+           // messageDialog.show(qsTr("REMOVE"));
+            removeSubreddit(sub1.text)
+
+            sub1.text = VarScript.sub1text
+            sub2.text = VarScript.sub2text
+            sub3.text = VarScript.sub3text
+            sub4.text = VarScript.sub4text
+
+
+        }
+
+        removesub2.onClicked:
+        {
+            VarScript.sub1text = ""
+            VarScript.sub2text = ""
+            VarScript.sub3text = ""
+            VarScript.sub4text = ""
+
+            //messageDialog.show(qsTr("REMOVE"));
+            removeSubreddit(sub2.text)
+
+            sub1.text = VarScript.sub1text
+            sub2.text = VarScript.sub2text
+            sub3.text = VarScript.sub3text
+            sub4.text = VarScript.sub4text
+        }
+        removesub3.onClicked:
+        {
+            VarScript.sub1text = ""
+            VarScript.sub2text = ""
+            VarScript.sub3text = ""
+            VarScript.sub4text = ""
+
+            //messageDialog.show(qsTr("REMOVE"));
+            removeSubreddit(sub3.text)
+
+            sub1.text = VarScript.sub1text
+            sub2.text = VarScript.sub2text
+            sub3.text = VarScript.sub3text
+            sub4.text = VarScript.sub4text
+
+
+        }
+        removesub4.onClicked:
+        {
+            VarScript.sub1text = ""
+            VarScript.sub2text = ""
+            VarScript.sub3text = ""
+            VarScript.sub4text = ""
+
+            //messageDialog.show(qsTr("REMOVE"));
+            removeSubreddit(sub4.text)
+
+            sub1.text = VarScript.sub1text
+            sub2.text = VarScript.sub2text
+            sub3.text = VarScript.sub3text
+            sub4.text = VarScript.sub4text
+
+
+        }
+
+
 
 
 

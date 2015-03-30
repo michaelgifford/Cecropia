@@ -25,6 +25,11 @@ Item {
     property alias sub3: sub3
     property alias sub4: sub4
 
+    property alias removesub1: removesub1
+    property alias removesub2: removesub2
+    property alias removesub3: removesub3
+    property alias removesub4: removesub4
+
 
 
 //side panel start
@@ -100,8 +105,8 @@ Item {
                     text: qsTr("+")
                 }
 
-                Text {
-                       id: sub1
+Text {
+    id: sub1
                        x: 0
                        y: 56
                        width: 212
@@ -110,7 +115,16 @@ Item {
                        text: qsTr("subreddit1")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
-                   }
+
+                       Button {
+                           id: removesub1
+                           x: 220
+                           y: 1
+                           width: 19
+                           height: 19
+                           text: qsTr("-")
+                       }
+}
 
                    Text {
                        id: sub2
@@ -122,6 +136,15 @@ Item {
                        text: qsTr("subreddit2")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
+
+                       Button {
+                           id: removesub2
+                           x: 220
+                           y: 1
+                           width: 19
+                           height: 19
+                           text: qsTr("-")
+                       }
                    }
 
                    Text {
@@ -134,6 +157,15 @@ Item {
                        text: qsTr("subreddit3")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
+
+                       Button {
+                           id: removesub3
+                           x: 220
+                           y: 1
+                           width: 19
+                           height: 19
+                           text: qsTr("-")
+                       }
                    }
 
                    Text {
@@ -146,6 +178,15 @@ Item {
                        text: qsTr("subreddit4")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
+
+                       Button {
+                           id: removesub4
+                           x: 220
+                           y: 1
+                           width: 19
+                           height: 19
+                           text: qsTr("-")
+                       }
                    }
 
 
@@ -206,6 +247,7 @@ Item {
                     text: qsTr("Text")
                     font.pixelSize: 12
                 }
+
 
 
 

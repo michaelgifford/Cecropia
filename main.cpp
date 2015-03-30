@@ -31,6 +31,9 @@ int main(int argc, char *argv[])
     QObject::connect(window, SIGNAL(submitSubreddit(QString)),
                          &handleinput, SLOT(handlesubmitSubreddit(QString)));
 
+    QObject::connect(window, SIGNAL(removeSubreddit(QString)),
+                         &handleinput, SLOT(handleremoveSubreddit(QString)));
+
     QObject::connect(window, SIGNAL(submitKeyword(QString)),
                          &handleinput, SLOT(handlesubmitKeyword(QString)));
 
