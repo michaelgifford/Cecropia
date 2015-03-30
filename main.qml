@@ -16,15 +16,7 @@ ApplicationWindow {
 
     signal submitKeyword(string keyword_data)
 
-    function grapher(gsub, nscore, numposts, numcomments){
-        VarScript.sub1score = nscore
-        VarScript.sub1posts = numposts
-        VarScript.sub1comments = numcomments
 
-
-       // messageDialog.show(qsTr("GRAPH!"));
-
-    }
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
@@ -46,6 +38,7 @@ ApplicationWindow {
 
         signal submitSubreddit(string subreddit_data)
         signal removeSubreddit(string subreddit_remove)
+
 
         function setSubn(text, number){
             console.log("Set text: ", text, " to ", number);
@@ -69,6 +62,14 @@ ApplicationWindow {
                     sub4.text = text
                     break;
             }
+        }
+
+        function grapher(gsub, nscore, numposts, numcomments){
+
+            score.height = nscore
+            posts.height = numposts
+            comments.height = numcomments
+
         }
 
         anchors.rightMargin: 0

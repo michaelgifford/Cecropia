@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
     QObject::connect(&handleinput, SIGNAL(setSubn(QVariant, QVariant)),
                          mainForm, SLOT(setSubn(QVariant, QVariant)));
     QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant, QVariant)),
-                         window, SLOT(grapher(QVariant, QVariant, QVariant, QVariant)));
+                         mainForm, SLOT(grapher(QVariant, QVariant, QVariant, QVariant)));
 
 
 

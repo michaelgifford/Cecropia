@@ -112,7 +112,7 @@ Item {
                        width: 212
                        height: 20
                        color: "#ffffff"
-                       text: qsTr("subreddit1")
+                       text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
 
@@ -134,7 +134,7 @@ Item {
                        height: 20
                        color: "#ffffff"
 
-                       text: qsTr("subreddit2")
+                       text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
 
@@ -155,7 +155,7 @@ Item {
                        width: 212
                        height: 20
                        color: "#ffffff"
-                       text: qsTr("subreddit3")
+                       text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
 
@@ -176,7 +176,7 @@ Item {
                        width: 212
                        height: 20
                        color: "#ffffff"
-                       text: qsTr("subreddit4")
+                       text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
 

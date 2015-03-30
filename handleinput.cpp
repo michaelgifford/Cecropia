@@ -117,7 +117,9 @@ void HandleInput::visualize(const QString keyword_data)
 
 void HandleInput::handleData(QMap<QString, RedditData> data)
 {
+    qDebug() << "test: this is the score for subreddit NUMERO UNO" << subreddit_vector[0] << data[subreddit_vector[0]].score;
     emit sendGraph(subreddit_vector[0], data[subreddit_vector[0]].score, data[subreddit_vector[0]].numPosts, data[subreddit_vector[0]].numComments);
+
     for(int i=0; i<subreddit_vector.size(); i++)
     {
         qDebug() << "test: this is the score for subreddit" << subreddit_vector[i] << data[subreddit_vector[i]].score;
