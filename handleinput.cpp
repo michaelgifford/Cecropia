@@ -35,11 +35,21 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
         }
         else
         {
-            subreddit_vector.append(subreddit_data.toLower());
+   //         if(checkSub(subreddit_data))  checks if subreddit exists
+    //        {
+                subreddit_vector.append(subreddit_data.toLower());
+
+      /*        }
+              else
+               {
+                //EXCEPTION HANDLE!!
+                 //return that subreddit does not exist
+              } */
         }
 
 
     }
+
 
     else
     {
