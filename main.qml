@@ -62,35 +62,42 @@ ApplicationWindow {
                     break;
             }
         }
+        function cleargraph(){
+            score1.width = score2.width = score3.width = score4.width =5
+            posts1.width = posts2.width = posts3.width = posts4.width = 5
+            comments1.width = comments2.width = comments3.width = comments4.width
+        }
 
         function graph1(gsub, nscore, numposts, numcomments){
 
-            score1.width = nscore/25
-            posts1.width = numposts
-            comments1.width = numcomments/10
+            cleargraph()
+
+            score1.width = nscore/numposts*10
+            posts1.width = numposts*5
+            comments1.width = numcomments/numposts*10
 
         }
 
         function graph2(gsub, nscore, numposts, numcomments){
 
-            score2.width = nscore/25
-            posts2.width = numposts
-            comments2.width = numcomments/10
+            score2.width = nscore/numposts
+            posts2.width = numposts*5
+            comments2.width = numcomments/numposts*10
 
         }
         function graph3(gsub, nscore, numposts, numcomments){
 
-            score3.width = nscore/25
-            posts3.width = numposts
-            comments3.width = numcomments/10
+            score3.width = nscore/numposts
+            posts3.width = numposts*5
+            comments3.width = numcomments/numposts*10
 
         }
 
         function graph4(gsub, nscore, numposts, numcomments){
 
-            score4.width = nscore/25
+            score4.width = nscore/numposts*10
             posts4.width = numposts
-            comments4.width = numcomments/10
+            comments4.width = numcomments/numposts*10
 
         }
 

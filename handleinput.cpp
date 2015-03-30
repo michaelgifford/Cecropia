@@ -117,21 +117,25 @@ void HandleInput::visualize(const QString keyword_data)
 
 void HandleInput::handleData(QMap<QString, RedditData> data)
 {
-    if(subreddit_vector.size() >= 1){
-        qDebug() << "test: this is the score for subreddit NUMERO UNO" << subreddit_vector[0] << data[subreddit_vector[0]].score;
-        emit sendGraph1(subreddit_vector[0], data[subreddit_vector[0]].score, data[subreddit_vector[0]].numPosts, data[subreddit_vector[0]].numComments);
-    }
-    if(subreddit_vector.size() >= 2){
-        qDebug() << "test: this is the score for subreddit NUMERO DOS" << subreddit_vector[1] << data[subreddit_vector[1]].score;
-        emit sendGraph2(subreddit_vector[1], data[subreddit_vector[1]].score, data[subreddit_vector[1]].numPosts, data[subreddit_vector[1]].numComments);
-    }
-    if(subreddit_vector.size() >= 3){
-        qDebug() << "test: this is the score for subreddit NUMERO 3" << subreddit_vector[2] << data[subreddit_vector[2]].score;
-        emit sendGraph3(subreddit_vector[2], data[subreddit_vector[2]].score, data[subreddit_vector[2]].numPosts, data[subreddit_vector[2]].numComments);
-    }
-    if(subreddit_vector.size() == 4){
-        qDebug() << "test: this is the score for subreddit NUMERO 4" << subreddit_vector[3] << data[subreddit_vector[3]].score;
-        emit sendGraph4(subreddit_vector[3], data[subreddit_vector[3]].score, data[subreddit_vector[3]].numPosts, data[subreddit_vector[3]].numComments);
+    if(subreddit_vector.size() == 0){
+        emit cleargraph();
+    }else{
+        if(subreddit_vector.size() >= 1){
+            qDebug() << "test: this is the score for subreddit NUMERO UNO" << subreddit_vector[0] << data[subreddit_vector[0]].score;
+            emit sendGraph1(subreddit_vector[0], data[subreddit_vector[0]].score, data[subreddit_vector[0]].numPosts, data[subreddit_vector[0]].numComments);
+        }
+        if(subreddit_vector.size() >= 2){
+            qDebug() << "test: this is the score for subreddit NUMERO DOS" << subreddit_vector[1] << data[subreddit_vector[1]].score;
+            emit sendGraph2(subreddit_vector[1], data[subreddit_vector[1]].score, data[subreddit_vector[1]].numPosts, data[subreddit_vector[1]].numComments);
+        }
+        if(subreddit_vector.size() >= 3){
+            qDebug() << "test: this is the score for subreddit NUMERO 3" << subreddit_vector[2] << data[subreddit_vector[2]].score;
+            emit sendGraph3(subreddit_vector[2], data[subreddit_vector[2]].score, data[subreddit_vector[2]].numPosts, data[subreddit_vector[2]].numComments);
+        }
+        if(subreddit_vector.size() == 4){
+            qDebug() << "test: this is the score for subreddit NUMERO 4" << subreddit_vector[3] << data[subreddit_vector[3]].score;
+            emit sendGraph4(subreddit_vector[3], data[subreddit_vector[3]].score, data[subreddit_vector[3]].numPosts, data[subreddit_vector[3]].numComments);
+        }
     }
 }
 
