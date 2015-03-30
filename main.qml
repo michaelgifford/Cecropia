@@ -65,39 +65,42 @@ ApplicationWindow {
         function cleargraph(){
             score1.width = score2.width = score3.width = score4.width =5
             posts1.width = posts2.width = posts3.width = posts4.width = 5
-            comments1.width = comments2.width = comments3.width = comments4.width
+            comments1.width = comments2.width = comments3.width = comments4.width = 5
         }
 
         function graph1(gsub, nscore, numposts, numcomments){
 
             cleargraph()
 
-            score1.width = nscore/numposts*10
+            score1.width = ((nscore/numposts)-1)*10
             posts1.width = numposts*5
-            comments1.width = numcomments/numposts*10
+            comments1.width = ((numcomments/numposts)-1)*10
+
 
         }
 
         function graph2(gsub, nscore, numposts, numcomments){
 
-            score2.width = nscore/numposts
+            score2.width = ((nscore/numposts)-1)*10
             posts2.width = numposts*5
-            comments2.width = numcomments/numposts*10
+            comments2.width = ((numcomments/numposts)-1)*10
+
 
         }
         function graph3(gsub, nscore, numposts, numcomments){
 
-            score3.width = nscore/numposts
+            score3.width = ((nscore/numposts)-1)*10
             posts3.width = numposts*5
-            comments3.width = numcomments/numposts*10
+            comments3.width = ((numcomments/numposts)-1)*10
+
 
         }
 
         function graph4(gsub, nscore, numposts, numcomments){
 
-            score4.width = nscore/numposts*10
-            posts4.width = numposts
-            comments4.width = numcomments/numposts*10
+            score4.width = ((nscore/numposts)-1)*10
+            posts4.width = numposts*5
+            comments4.width = ((numcomments/numposts)-1)*10
 
         }
 
@@ -113,6 +116,7 @@ ApplicationWindow {
         add_b.onClicked:
         {
             submitSubreddit(subreddit.text)
+            subreddit.text = ""
         }
 
         removesub1.onClicked:
@@ -164,13 +168,6 @@ ApplicationWindow {
 
 
 
-        clear_b.onClicked:
-        {
-            subreddit.text = ""
-            keyword.text = ""
-
-
-        }
 
 
         visualize_b.onClicked:
@@ -183,6 +180,19 @@ ApplicationWindow {
             //donedata();
 
 
+        }
+
+        clear_b.onClicked:
+        {
+
+            removeSubreddit(sub4.text)
+            removeSubreddit(sub3.text)
+            removeSubreddit(sub2.text)
+            removeSubreddit(sub1.text)
+            keyword.text = ""
+            subreddit.text = ""
+            key_display.text = ""
+            cleargraph()
         }
 
 
