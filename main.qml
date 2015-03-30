@@ -68,40 +68,36 @@ ApplicationWindow {
             comments1.width = comments2.width = comments3.width = comments4.width = 1
         }
 
-        function graph1(gsub, nscore, numposts, numcomments){
+        function graph1(nsubs, nscore, numposts, numcomments){
 
             cleargraph()
 
-            score1.width = ((nscore/numposts)-1)*10
-            posts1.width = numposts*5
-            comments1.width = ((numcomments/numposts)-1)*10
-
-
-        }
-
-        function graph2(gsub, nscore, numposts, numcomments){
-
-            score2.width = ((nscore/numposts)-1)*10
-            posts2.width = numposts*5
-            comments2.width = ((numcomments/numposts)-1)*10
-
-
-        }
-        function graph3(gsub, nscore, numposts, numcomments){
-
-            score3.width = ((nscore/numposts)-1)*10
-            posts3.width = numposts*5
-            comments3.width = ((numcomments/numposts)-1)*10
-
+            score1.width = nscore/numposts/2
+            posts1.width = nscore/nsubs*numposts
+            comments1.width = numcomments/numposts
 
         }
 
-        function graph4(gsub, nscore, numposts, numcomments){
+        function graph2(nsubs, nscore, numposts, numcomments){
 
-            score4.width = ((nscore/numposts)-1)*10
-            posts4.width = numposts*5
-            comments4.width = ((numcomments/numposts)-1)*10
+            score2.width = nscore/numposts/2
+            posts2.width = nscore/nsubs*100
+            comments2.width = numcomments/numposts
 
+        }
+        function graph3(nsubs, nscore, numposts, numcomments){
+
+            score3.width = nscore/numposts/2
+            posts3.width = nscore/nsubs*numposts
+            comments3.width = numcomments/numposts
+
+        }
+
+        function graph4(nsubs, nscore, numposts, numcomments){
+
+            score4.width = nscore/numposts/2
+            posts4.width = nscore/nsubs*numposts
+            comments4.width = numcomments/numposts
         }
 
 

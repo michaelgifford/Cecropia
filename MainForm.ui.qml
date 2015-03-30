@@ -124,7 +124,7 @@ Item {
                        y: 56
                        width: 212
                        height: 20
-                       color: "#ffffff"
+                       color: "red"
                        text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
@@ -145,7 +145,7 @@ Item {
                        y: 74
                        width: 212
                        height: 20
-                       color: "#ffffff"
+                       color: "blue"
 
                        text: qsTr("")
                        wrapMode: Text.WordWrap
@@ -167,7 +167,7 @@ Item {
                        y: 95
                        width: 212
                        height: 20
-                       color: "#ffffff"
+                       color: "green"
                        text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
@@ -188,7 +188,7 @@ Item {
                        y: 115
                        width: 212
                        height: 20
-                       color: "#ffffff"
+                       color: "orange"
                        text: qsTr("")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12
@@ -319,30 +319,30 @@ GroupBox {
 
                     Rectangle {
                         id: posts1
-                        width: 5
-                        height: 5
+                        width: 1
+                        height: 30
                         color: "red"
                     }
 
 Rectangle {
     id: posts2
-    width: 5
-    height: 5
-    color: "#ff0000"
+    width: 1
+    height: 30
+    color: "blue"
 }
 
                     Rectangle {
                         id: posts3
-                        width: 5
-                        height: 5
-                        color: "#ff0000"
+                        width: 1
+                        height: 30
+                        color: "green"
                     }
 
                     Rectangle {
                         id: posts4
-                        width: 5
-                        height: 5
-                        color: "#ff0000"
+                        width: 1
+                        height: 30
+                        color: "orange"
                     }
 
 
@@ -356,30 +356,30 @@ Rectangle {
 
                     Rectangle {
                         id: comments1
-                        width: 5
-                        height: 5
-                        color: "green"
+                        width: 1
+                        height: 30
+                        color: "red"
                     }
 
                     Rectangle {
                         id: comments2
-                        width: 5
-                        height: 5
-                        color: "#008000"
+                        width: 1
+                        height: 30
+                        color: "blue"
                     }
 
                     Rectangle {
                         id: comments3
-                        width: 5
-                        height: 5
-                        color: "#008000"
+                        width: 1
+                        height: 30
+                        color: "green"
                     }
 
                     Rectangle {
                         id: comments4
-                        width: 5
-                        height: 5
-                        color: "#008000"
+                        width: 1
+                        height: 30
+                        color: "orange"
                     }
                 }
 
@@ -391,31 +391,31 @@ ColumnLayout {
 
                     Rectangle {
                         id: score1
-                        width: 5
-                        height: 5
-                        color: "blue"
+                        width: 1
+                        height: 30
+                        color: "red"
                     }
 
 
                     Rectangle {
                         id: score2
-                        width: 5
-                        height: 5
-                        color: "#0000ff"
+                        width: 1
+                        height: 30
+                        color: "blue"
                     }
 
                     Rectangle {
                         id: score3
-                        width: 5
-                        height: 5
-                        color: "#0000ff"
+                        width: 1
+                        height: 30
+                        color: "green"
                     }
 
                     Rectangle {
                         id: score4
-                        width: 5
-                        height: 5
-                        color: "#0000ff"
+                        width: 1
+                        height: 30
+                        color: "orange"
                     }
 }
 
