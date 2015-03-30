@@ -19,9 +19,13 @@ ApplicationWindow {
     signal removeSubreddit(string subreddit_remove)
 
 
-    function sendGraph(nscore, numposts, numcomments){
+    function grapher(gsub, nscore, numposts, numcomments){
+        VarScript.sub1score = nscore
+        VarScript.sub1posts = numposts
+        VarScript.sub1comments = numcomments
 
 
+       // messageDialog.show(qsTr("GRAPH!"));
 
     }
 
@@ -51,6 +55,7 @@ ApplicationWindow {
         }
 
     }
+
 
 
 
@@ -103,6 +108,7 @@ ApplicationWindow {
 
         removesub1.onClicked:
         {
+
             VarScript.sub1text = ""
             VarScript.sub2text = ""
             VarScript.sub3text = ""
@@ -185,13 +191,19 @@ ApplicationWindow {
 
         visualize_b.onClicked:
         {
+            posts.height = (VarScript.sub1posts*2);
+            score.height = (VarScript.sub1score/23);
+            comments.height = (VarScript.sub1comments/5);
+
             submitKeyword(keyword.text)
 
-            //key_display.text = keyword.text
-        }
-    /*    function superGraph(nscore, numposts, numcomments){
+            //donedata();
 
-        } */
+            posts.height = (VarScript.sub1posts*2);
+            score.height = (VarScript.sub1score/23);
+            comments.height = (VarScript.sub1comments/5);
+        }
+
 
 
 

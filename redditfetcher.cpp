@@ -82,6 +82,7 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
         response[this->subreddits.at(i)] = redditData;
     }
     qDebug() << "done requests";
+
     emit finished(response);
 }
 

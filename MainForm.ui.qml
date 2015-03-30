@@ -9,9 +9,9 @@ Item {
     width: 144
     height: 840
 
-    // property alias score: score
-    // property alias comments: comments
-   // property alias posts: posts
+    property alias score: score
+    property alias comments: comments
+    property alias posts: posts
     property alias subreddit: subreddit
     property alias add_b: add_b
     property alias keyword: keyword

@@ -110,13 +110,13 @@ void HandleInput::visualize(const QString keyword_data)
 }
 
 
-
 void HandleInput::handleData(QMap<QString, RedditData> data)
 {
+    emit sendGraph(subreddit_vector[0], data[subreddit_vector[0]].score, data[subreddit_vector[0]].numPosts, data[subreddit_vector[0]].numComments);
     for(int i=0; i<subreddit_vector.size(); i++)
     {
         qDebug() << "test: this is the score for subreddit" << subreddit_vector[i] << data[subreddit_vector[i]].score;
-        //fix this: emit setSubn(subreddit_vector[i], i);
+      //  emit sendGraph(subreddit_vector[i], data[subreddit_vector[i]].score, data[subreddit_vector[i]].numPosts, data[subreddit_vector[i]].numComments);
     }
 }
 

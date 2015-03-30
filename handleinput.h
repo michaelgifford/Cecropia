@@ -23,7 +23,7 @@ protected:
     bool is_sub;
 
 signals:  //ignore for now
-    void sendGraph(QVariant nscore, QVariant numposts, QVariant numcomments);
+    void sendGraph(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
     void setSubn(QVariant sub_text, QVariant subn);
 
 
