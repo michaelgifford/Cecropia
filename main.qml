@@ -8,6 +8,7 @@ import "global_item_variables.js" as VarScript
 
 
 ApplicationWindow {
+    id: mainscreen
     title: qsTr("Reddt Visualizer")
     width: 1440
     height: 820
@@ -17,6 +18,9 @@ ApplicationWindow {
 
     signal submitSubreddit(string subreddit_data)
     signal removeSubreddit(string subreddit_remove)
+
+
+
 
 
     function grapher(gsub, nscore, numposts, numcomments){
@@ -54,7 +58,19 @@ ApplicationWindow {
                 break;
         }
 
-    }
+
+
+
+
+        console.log("calling the change")
+
+
+
+
+
+
+
+        }
 
 
 
@@ -72,6 +88,7 @@ ApplicationWindow {
             MenuItem {
                 text: qsTr("&Open")
                 onTriggered: messageDialog.show(qsTr("Open action triggered"));
+
             }
             MenuItem {
                 text: qsTr("E&xit")
@@ -79,6 +96,10 @@ ApplicationWindow {
             }
         }
     }
+
+
+
+
 
 
     MainForm {
@@ -97,10 +118,14 @@ ApplicationWindow {
         {
             submitSubreddit(subreddit.text)
 
+         //   callf()
+           // console.log(callf())
+
             sub1.text = VarScript.sub1text
             sub2.text = VarScript.sub2text
             sub3.text = VarScript.sub3text
             sub4.text = VarScript.sub4text
+
         }
 
 
@@ -114,7 +139,7 @@ ApplicationWindow {
             VarScript.sub3text = ""
             VarScript.sub4text = ""
 
-           // messageDialog.show(qsTr("REMOVE"));
+            // messageDialog.show(qsTr("REMOVE"));
             removeSubreddit(sub1.text)
 
             sub1.text = VarScript.sub1text

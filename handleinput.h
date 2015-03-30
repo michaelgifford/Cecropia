@@ -29,9 +29,9 @@ signals:  //ignore for now
 
 public slots:
 
-    void handlesubmitSubreddit(const QString subreddit_data);
-    void handlesubmitKeyword(const QString keyword_data);
-    void handleremoveSubreddit(const QString subreddit_data);
+    void handlesubmitSubreddit(const QString &subreddit_data);
+    void handlesubmitKeyword(const QString &keyword_data);
+    void handleremoveSubreddit(const QString &subreddit_data);
 
 private slots:
     void visualize(const QString keyword_data);

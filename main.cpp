@@ -11,6 +11,7 @@
 #include <QQuickWindow>
 #include <QQmlContext>
 
+
 #include "handleinput.h"
 
 
@@ -36,6 +37,9 @@ int main(int argc, char *argv[])
 
     QObject::connect(window, SIGNAL(submitKeyword(QString)),
                          &handleinput, SLOT(handlesubmitKeyword(QString)));
+
+    QObject::connect(window, SIGNAL(subchanged()),
+                         window, SLOT(subchanged()));
 
 
     // connect our C++ signal to our QML slot

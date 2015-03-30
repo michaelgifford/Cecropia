@@ -20,7 +20,7 @@ HandleInput::HandleInput(QObject *parent) : QObject(parent)
 QVector<QString> subreddit_vector(0);
 
 
-void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
+void HandleInput::handlesubmitSubreddit(const QString &subreddit_data)
 {
     qDebug() << "this is the subreddit passed in: " << subreddit_data;
 
@@ -30,11 +30,7 @@ void HandleInput::handlesubmitSubreddit(const QString subreddit_data)
         return;
     }
 
-    if(subreddit_vector.contains(subreddit_data.toLower())) {
-        // TODO: display errors here
-        qDebug() << "that subreddit is already added!";
-        return;
-    }
+
     // if we made it this far--check if it's a subreddit
 
     RedditFetcher *fetcher = new RedditFetcher(this);
@@ -54,13 +50,20 @@ void HandleInput::receivedSubredditExists(QString subreddit, bool exists) {
     }
 
     qDebug() << "it exists. add it to the vector and redraw";
-    subreddit_vector.append(subreddit);
+    if(subreddit_vector.contains(subreddit.toLower())) {
+        // TODO: display errors here
+        qDebug() << "that subreddit is already added!";
+        return;
+    }
+    else{
+        subreddit_vector.append(subreddit);
+    }
     // it exists, so add it and reprint the subs
     HandleInput::printSubs(subreddit_vector);
 }
 
 
-void HandleInput::handleremoveSubreddit(const QString subreddit_remove)
+void HandleInput::handleremoveSubreddit(const QString &subreddit_remove)
 {
     qDebug() << "this is the subreddit to remove: " << subreddit_remove;
 
@@ -88,7 +91,7 @@ void HandleInput::printSubs(const QVector<QString> print_list)
     }
 }
 
-void HandleInput::handlesubmitKeyword(const QString keyword_data)
+void HandleInput::handlesubmitKeyword(const QString &keyword_data)
 {
     qDebug() << "this is the keyword:" << keyword_data;
 
