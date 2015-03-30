@@ -115,17 +115,54 @@ GroupBox {
         text: qsTr("Visualize!")
     }
 
+
     Text {
-        id: subreddit_msgs
-        x: 0
-        y: 56
-        width: 244
-        height: 102
-        color: "#ffffff"
-        text: qsTr("List of entered subreddits with x's beside for removal")
-        wrapMode: Text.WordWrap
-        font.pixelSize: 12
-    }
+           id: sub1
+           x: 0
+           y: 56
+           width: 212
+           height: 20
+           color: getcolor()
+           text: qsTr("subreddit1")
+           wrapMode: Text.WordWrap
+           font.pixelSize: 12
+       }
+
+       Text {
+           id: sub2
+           x: 0
+           y: 74
+           width: 212
+           height: 20
+           color: "#ffffff"
+           text: qsTr("subreddit2")
+           wrapMode: Text.WordWrap
+           font.pixelSize: 12
+       }
+
+       Text {
+           id: sub3
+           x: 0
+           y: 95
+           width: 212
+           height: 20
+           color: "#ffffff"
+           text: qsTr("subreddit3")
+           wrapMode: Text.WordWrap
+           font.pixelSize: 12
+       }
+
+       Text {
+           id: sub4
+           x: 0
+           y: 115
+           width: 212
+           height: 20
+           color: "#ffffff"
+           text: qsTr("subreddit4")
+           wrapMode: Text.WordWrap
+           font.pixelSize: 12
+       }
 
     Label {
         id: keyword_label

@@ -21,8 +21,10 @@ ApplicationWindow {
         comments.height= (500*nscore/numcomments*100)
 
 
+    }
 
-
+    function getcolor(){
+        return "red"
     }
 
 
