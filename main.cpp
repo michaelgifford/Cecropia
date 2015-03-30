@@ -26,10 +26,11 @@ int main(int argc, char *argv[])
 
     QObject *topLevel = engine.rootObjects().value(0);
     QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
+    QObject *mainForm = window->findChild<QObject*>("mainForm");
 
     // connect our QML signal to our C++ slot
 
-    QObject::connect(window, SIGNAL(submitSubreddit(QString)),
+    QObject::connect(mainForm, SIGNAL(submitSubreddit(QString)),
                          &handleinput, SLOT(handlesubmitSubreddit(QString)));
 
     QObject::connect(window, SIGNAL(removeSubreddit(QString)),
@@ -38,10 +39,13 @@ int main(int argc, char *argv[])
     QObject::connect(window, SIGNAL(submitKeyword(QString)),
                          &handleinput, SLOT(handlesubmitKeyword(QString)));
 
+<<<<<<< HEAD
     QObject::connect(window, SIGNAL(subchanged()),
                          window, SLOT(subchanged()));
 
 
+=======
+>>>>>>> FETCH_HEAD
     // connect our C++ signal to our QML slot
     // NOTE: if we want to pass an parameter to our QML slot, it has to be
     // a QVariant.
@@ -51,7 +55,7 @@ int main(int argc, char *argv[])
                          window, SLOT(sendGraph(QVariant, QVariant, QVariant)));
                          */
     QObject::connect(&handleinput, SIGNAL(setSubn(QVariant, QVariant)),
-                         window, SLOT(setSubn(QVariant, QVariant)));
+                         mainForm, SLOT(setSubn(QVariant, QVariant)));
     QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant, QVariant)),
                          window, SLOT(grapher(QVariant, QVariant, QVariant, QVariant)));
 

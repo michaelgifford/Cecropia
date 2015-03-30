@@ -16,13 +16,15 @@ ApplicationWindow {
 
     signal submitKeyword(string keyword_data)
 
-    signal submitSubreddit(string subreddit_data)
     signal removeSubreddit(string subreddit_remove)
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> FETCH_HEAD
     function grapher(gsub, nscore, numposts, numcomments){
         VarScript.sub1score = nscore
         VarScript.sub1posts = numposts
@@ -33,6 +35,7 @@ ApplicationWindow {
 
     }
 
+<<<<<<< HEAD
     function setSubn(text, number){
 
 
@@ -82,6 +85,8 @@ ApplicationWindow {
 
 
 
+=======
+>>>>>>> FETCH_HEAD
     menuBar: MenuBar {
         Menu {
             title: qsTr("&File")
@@ -103,8 +108,32 @@ ApplicationWindow {
 
 
     MainForm {
+        signal submitSubreddit(string subreddit_data)
+        objectName: "mainForm"
 
-
+        function setSubn(text, number){
+            console.log("Set text: ", text, " to ", number);
+            switch(number) {
+                case 0:
+                    sub1.text = ""
+                    sub2.text = ""
+                    sub3.text = ""
+                    sub4.text = ""
+                    break;
+                case 1:
+                    sub1.text = text
+                    break;
+                case 2:
+                    sub2.text = text
+                    break;
+                case 3:
+                    sub3.text = text
+                    break;
+                case 4:
+                    sub4.text = text
+                    break;
+            }
+        }
 
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
@@ -117,6 +146,7 @@ ApplicationWindow {
         add_b.onClicked:
         {
             submitSubreddit(subreddit.text)
+<<<<<<< HEAD
 
          //   callf()
            // console.log(callf())
@@ -126,10 +156,9 @@ ApplicationWindow {
             sub3.text = VarScript.sub3text
             sub4.text = VarScript.sub4text
 
+=======
+>>>>>>> FETCH_HEAD
         }
-
-
-
 
         removesub1.onClicked:
         {
