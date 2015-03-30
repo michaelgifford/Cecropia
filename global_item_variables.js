@@ -1,1 +1,7 @@
-var sub1color = "blue"
+
+
+
+var sub1text = ""
+var sub2text = ""
+var sub3text = ""
+var sub4text = ""

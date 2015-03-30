@@ -20,6 +20,11 @@ Item {
 
     property alias key_display: key_display
 
+    property alias sub1: sub1
+    property alias sub2: sub2
+    property alias sub3: sub3
+    property alias sub4: sub4
+
 
 
 //side panel start
@@ -101,7 +106,7 @@ Item {
                        y: 56
                        width: 212
                        height: 20
-                       color: VarScript.sub1color
+                       color: "#ffffff"
                        text: qsTr("subreddit1")
                        wrapMode: Text.WordWrap
                        font.pixelSize: 12

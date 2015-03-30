@@ -3,6 +3,7 @@ import QtQuick.Controls 1.3
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
 
+
 import "global_item_variables.js" as VarScript
 
 
@@ -16,19 +17,38 @@ ApplicationWindow {
 
     signal submitSubreddit(string subreddit_data)
 
-    /*
+
     function sendGraph(nscore, numposts, numcomments){
 
 
 
     }
-    */
 
-    /*
-    function getcolor(){
-        return VarScript.sub1color
+
+
+    function setSubn(text, number){
+        switch(number) {
+            case 1:
+                VarScript.sub1text = text
+                break;
+            case 2:
+                VarScript.sub2text = text
+                break;
+            case 3:
+                VarScript.sub3text = text
+                break;
+            case 4:
+                VarScript.sub4text = text
+                break;
+        }
+       // VarScript.sub1text= text
+        console.log(VarScript.sub1color)
+
     }
-    */
+
+
+
+
 
 
 
@@ -61,7 +81,13 @@ ApplicationWindow {
         add_b.onClicked:
         {
             submitSubreddit(subreddit.text)
+
+            sub1.text = VarScript.sub1text
+            sub2.text = VarScript.sub2text
+            sub3.text = VarScript.sub3text
+            sub4.text = VarScript.sub4text
         }
+
 
 
 
@@ -69,6 +95,7 @@ ApplicationWindow {
         {
             subreddit.text = ""
             keyword.text = ""
+
 
         }
 

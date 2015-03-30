@@ -43,7 +43,9 @@ void HandleInput::printSubs(const QVector<QString> print_list)
     qDebug() << "this is the subreddits sent to the print list:" << print_list;
     for(int i = 0; i < print_list.size(); i++)
     {
-        emit setSubn(print_list[i], i);
+        qDebug() << "printing stuff";
+
+        emit setSubn(print_list[i].toLower(), i+1);
     }
 }
 
@@ -75,6 +77,7 @@ void HandleInput::handleData(QMap<QString, RedditData> data)
     for(int i=0; i<subreddit_vector.size(); i++)
     {
         qDebug() << "test: this is the score for subreddit" << subreddit_vector[i] << data[subreddit_vector[i]].score;
+        //fix this: emit setSubn(subreddit_vector[i], i);
     }
 }
 

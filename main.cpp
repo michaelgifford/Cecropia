@@ -43,6 +43,9 @@ int main(int argc, char *argv[])
     QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant)),
                          window, SLOT(sendGraph(QVariant, QVariant, QVariant)));
                          */
+    QObject::connect(&handleinput, SIGNAL(setSubn(QVariant, QVariant)),
+                         window, SLOT(setSubn(QVariant, QVariant)));
+
 
     return app.exec();
 }
