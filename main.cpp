@@ -39,8 +39,7 @@ int main(int argc, char *argv[])
     QObject::connect(window, SIGNAL(submitKeyword(QString)),
                          &handleinput, SLOT(handlesubmitKeyword(QString)));
 
-    QObject::connect(window, SIGNAL(subchanged()),
-                         window, SLOT(subchanged()));
+
 
     // connect our C++ signal to our QML slot
     // NOTE: if we want to pass an parameter to our QML slot, it has to be
@@ -52,8 +51,14 @@ int main(int argc, char *argv[])
                          */
     QObject::connect(&handleinput, SIGNAL(setSubn(QVariant, QVariant)),
                          mainForm, SLOT(setSubn(QVariant, QVariant)));
-    QObject::connect(&handleinput, SIGNAL(sendGraph(QVariant, QVariant, QVariant, QVariant)),
-                         mainForm, SLOT(grapher(QVariant, QVariant, QVariant, QVariant)));
+    QObject::connect(&handleinput, SIGNAL(sendGraph1(QVariant, QVariant, QVariant, QVariant)),
+                         mainForm, SLOT(graph1(QVariant, QVariant, QVariant, QVariant)));
+    QObject::connect(&handleinput, SIGNAL(sendGraph2(QVariant, QVariant, QVariant, QVariant)),
+                         mainForm, SLOT(graph2(QVariant, QVariant, QVariant, QVariant)));
+    QObject::connect(&handleinput, SIGNAL(sendGraph3(QVariant, QVariant, QVariant, QVariant)),
+                         mainForm, SLOT(graph3(QVariant, QVariant, QVariant, QVariant)));
+    QObject::connect(&handleinput, SIGNAL(sendGraph4(QVariant, QVariant, QVariant, QVariant)),
+                         mainForm, SLOT(graph4(QVariant, QVariant, QVariant, QVariant)));
 
 
 

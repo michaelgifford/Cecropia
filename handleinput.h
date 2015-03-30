@@ -23,7 +23,10 @@ protected:
     bool is_sub;
 
 signals:  //ignore for now
-    void sendGraph(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
+    void sendGraph1(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
+    void sendGraph2(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
+    void sendGraph3(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
+    void sendGraph4(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
     void setSubn(QVariant sub_text, QVariant subn);
 
 

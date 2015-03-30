@@ -4,7 +4,6 @@ import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
 
 
-import "global_item_variables.js" as VarScript
 
 
 ApplicationWindow {
@@ -64,13 +63,37 @@ ApplicationWindow {
             }
         }
 
-        function grapher(gsub, nscore, numposts, numcomments){
+        function graph1(gsub, nscore, numposts, numcomments){
 
-            score.height = nscore
-            posts.height = numposts
-            comments.height = numcomments
+            score1.width = nscore/25
+            posts1.width = numposts
+            comments1.width = numcomments/10
 
         }
+
+        function graph2(gsub, nscore, numposts, numcomments){
+
+            score2.width = nscore/25
+            posts2.width = numposts
+            comments2.width = numcomments/10
+
+        }
+        function graph3(gsub, nscore, numposts, numcomments){
+
+            score3.width = nscore/25
+            posts3.width = numposts
+            comments3.width = numcomments/10
+
+        }
+
+        function graph4(gsub, nscore, numposts, numcomments){
+
+            score4.width = nscore/25
+            posts4.width = numposts
+            comments4.width = numcomments/10
+
+        }
+
 
         anchors.rightMargin: 0
         anchors.bottomMargin: 0
@@ -92,7 +115,7 @@ ApplicationWindow {
             sub2.text = ""
             sub3.text = ""
             sub4.text = ""
-            // messageDialog.show(qsTr("REMOVE"));
+
             removeSubreddit(subText)
         }
 
@@ -104,7 +127,6 @@ ApplicationWindow {
             sub3.text = ""
             sub4.text = ""
 
-            //messageDialog.show(qsTr("REMOVE"));
             removeSubreddit(subText)
         }
         removesub3.onClicked:
@@ -115,7 +137,7 @@ ApplicationWindow {
             sub3.text = ""
             sub4.text = ""
 
-            //messageDialog.show(qsTr("REMOVE"));
+
             removeSubreddit(subText)
         }
         removesub4.onClicked:
@@ -126,7 +148,7 @@ ApplicationWindow {
             sub3.text = ""
             sub4.text = ""
 
-            //messageDialog.show(qsTr("REMOVE"));
+
             removeSubreddit(subText)
         }
 
@@ -146,17 +168,14 @@ ApplicationWindow {
 
         visualize_b.onClicked:
         {
-            posts.height = (VarScript.sub1posts*2);
-            score.height = (VarScript.sub1score/23);
-            comments.height = (VarScript.sub1comments/5);
+
 
             submitKeyword(keyword.text)
+            key_display.text = keyword.text.toLowerCase()
 
             //donedata();
 
-            posts.height = (VarScript.sub1posts*2);
-            score.height = (VarScript.sub1score/23);
-            comments.height = (VarScript.sub1comments/5);
+
         }
 
 

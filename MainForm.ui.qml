@@ -2,16 +2,13 @@ import QtQuick 2.4
 import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
 
-import "global_item_variables.js" as VarScript
 
 
 Item {
     width: 144
     height: 840
 
-    property alias score: score
-    property alias comments: comments
-    property alias posts: posts
+
     property alias subreddit: subreddit
     property alias add_b: add_b
     property alias keyword: keyword
@@ -30,6 +27,22 @@ Item {
     property alias removesub3: removesub3
     property alias removesub4: removesub4
 
+
+    property alias score1: score1
+    property alias comments1: comments1
+    property alias posts1: posts1
+
+    property alias score2: score2
+    property alias comments2: comments2
+    property alias posts2: posts2
+
+    property alias score3: score3
+    property alias comments3: comments3
+    property alias posts3: posts3
+
+    property alias score4: score4
+    property alias comments4: comments4
+    property alias posts4: posts4
 
 
 //side panel start
@@ -279,38 +292,6 @@ GroupBox {
             width: 1180
             height: 840
             title: qsTr("")
-            Row {
-                spacing: 20
-
-                id: row1
-                x: 23
-                y: 37
-                width: 700
-                height: 590
-
-                Rectangle {
-                    id: posts
-                    width: 200
-                    height: 5
-                    color: "red"
-                }
-
-                Rectangle {
-                    id: score
-                    width: 200
-                    height: 5
-                    color: "blue"
-                }
-
-                Rectangle {
-                    id: comments
-                    width: 200
-                    height: 5
-                    color: "green"
-                }
-
-
-            }
 
             Text {
                 id: key_display
@@ -318,11 +299,125 @@ GroupBox {
                 y: 28
                 width: 166
                 height: 92
-                text: qsTr("TEST")
+                text: qsTr("")
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.NoWrap
                 font.pixelSize: 30
             }
+
+            ColumnLayout {
+                id: columnLayout_graphs
+                x: 8
+                y: 0
+                width: 100
+                height: 823
+
+                ColumnLayout {
+                    id: columnLayout_sub1
+                    width: 100
+                    height: 100
+
+                    Rectangle {
+                        id: posts1
+                        width: 5
+                        height: 5
+                        color: "red"
+                    }
+
+                    Rectangle {
+                        id: score1
+                        width: 5
+                        height: 5
+                        color: "blue"
+                    }
+
+                    Rectangle {
+                        id: comments1
+                        width: 5
+                        height: 5
+                        color: "green"
+                    }
+                }
+
+                ColumnLayout {
+                    id: columnLayout_sub2
+                    width: 100
+                    height: 100
+                    Rectangle {
+                        id: posts2
+                        width: 5
+                        height: 5
+                        color: "#ff0000"
+                    }
+
+                    Rectangle {
+                        id: score2
+                        width: 5
+                        height: 5
+                        color: "#0000ff"
+                    }
+
+                    Rectangle {
+                        id: comments2
+                        width: 5
+                        height: 5
+                        color: "#008000"
+                    }
+                }
+
+                ColumnLayout {
+                    id: columnLayout_sub3
+                    width: 100
+                    height: 100
+                    Rectangle {
+                        id: posts3
+                        width: 5
+                        height: 5
+                        color: "#ff0000"
+                    }
+
+                    Rectangle {
+                        id: score3
+                        width: 5
+                        height: 5
+                        color: "#0000ff"
+                    }
+
+                    Rectangle {
+                        id: comments3
+                        width: 5
+                        height: 5
+                        color: "#008000"
+                    }
+                }
+
+                ColumnLayout {
+                    id: columnLayout_sub4
+                    width: 100
+                    height: 100
+                    Rectangle {
+                        id: posts4
+                        width: 5
+                        height: 5
+                        color: "#ff0000"
+                    }
+
+                    Rectangle {
+                        id: score4
+                        width: 5
+                        height: 5
+                        color: "#0000ff"
+                    }
+
+                    Rectangle {
+                        id: comments4
+                        width: 5
+                        height: 5
+                        color: "#008000"
+                    }
+                }
+            }
+
 
 
         }

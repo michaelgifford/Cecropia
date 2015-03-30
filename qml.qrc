@@ -2,6 +2,5 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
-        <file>global_item_variables.js</file>
     </qresource>
 </RCC>
