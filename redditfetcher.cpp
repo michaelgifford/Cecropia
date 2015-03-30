@@ -86,9 +86,27 @@ void RedditFetcher::normalizeStats(QNetworkReply *reply)
     }
 
     emit finished(response);
+}
 
+// checks a subreddit for its existence
+void RedditFetcher::checkSub(QString subreddit)
+{
+    // build query string from subreddit name
+    QUrlQuery query;
+    query.addQueryItem("subreddit", subreddit);// build the url string using query
+    QUrl url = QUrl::fromEncoded("https://young-lowlands-3189.herokuapp.com/subreddit_exists");
+    url.setQuery(query);
 
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply*)),
+            this, SLOT(normalizeSub(QNetworkReply*)));
+    manager->get(QNetworkRequest(url));
+}
 
+void RedditFetcher::normalizeSub(QNetworkReply *reply)
+{
+    QByteArray responseData = reply->readAll();
+    QJsonObject jsonObj = QJsonDocument::fromJson(responseData).object();
 
-
+    emit finishedSub(jsonObj.value("exists").toBool());
 }
