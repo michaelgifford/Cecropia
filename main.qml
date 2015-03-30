@@ -16,16 +16,19 @@ ApplicationWindow {
 
     signal submitSubreddit(string subreddit_data)
 
+    /*
     function sendGraph(nscore, numposts, numcomments){
 
 
 
     }
+    */
 
+    /*
     function getcolor(){
         return VarScript.sub1color
     }
-
+    */
 
 
 
@@ -79,56 +82,6 @@ ApplicationWindow {
     /*    function superGraph(nscore, numposts, numcomments){
 
         } */
-        Rectangle {
-            id: rectangle2
-            x: 260
-            y: 0
-            width: 1440-260
-            height: 840
-            color: "#ffffff"
-
-            GroupBox {
-                id: groupBox3
-                x: 0
-                y: 0
-                width: 761
-                height: 710
-                title: qsTr("Group Box")
-                Row {
-                    spacing: 20
-
-                    id: row1
-                    x: 23
-                    y: 37
-                    width: 700
-                    height: 590
-
-                    Rectangle {
-                        id: posts
-                        width: 200
-                        height: 5
-                        color: "red"
-                    }
-
-                    Rectangle {
-                        id: score
-                        width: 200
-                        height: 5
-                        color: "blue"
-                    }
-
-                    Rectangle {
-                        id: comments
-                        width: 200
-                        height: 5
-                        color: "green"
-                    }
-                }
-
-
-            }
-        }
-
 
 
 
