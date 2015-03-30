@@ -15,7 +15,7 @@ Item {
     property alias clear_b: clear_b
     property alias visualize_b: visualize_b
 
-    property alias key_display: key_display
+   // property alias key_display: key_display
 
     property alias sub1: sub1
     property alias sub2: sub2
@@ -30,19 +30,23 @@ Item {
 
     property alias score1: score1
     property alias comments1: comments1
-    property alias posts1: posts1
+    property alias density1: density1
 
     property alias score2: score2
     property alias comments2: comments2
-    property alias posts2: posts2
+    property alias density2: density2
 
     property alias score3: score3
     property alias comments3: comments3
-    property alias posts3: posts3
+    property alias density3: density3
 
     property alias score4: score4
     property alias comments4: comments4
-    property alias posts4: posts4
+    property alias density4: density4
+
+    property alias error_msgs: error_msgs
+
+  //  property alias loading: loading
 
 
 //side panel start
@@ -53,7 +57,7 @@ Item {
         y: 0
         width: 260
         height: 840
-        color: "#0a0e2c"
+        color: "#030a3c"
 
         GroupBox {               //side panel group start
             id: side_panel
@@ -255,10 +259,12 @@ Item {
                 Text {
                     id: error_msgs
                     x: 17
-                    y: 335
+                    y: 319
                     width: 210
                     height: 268
-                    text: qsTr("Text")
+                    color: "#fff2f2"
+                    text: qsTr("")
+                    wrapMode: Text.WordWrap
                     font.pixelSize: 12
                 }
 
@@ -293,53 +299,79 @@ GroupBox {
             height: 840
             title: qsTr("")
 
-            Text {
-                id: key_display
-                x: 931
-                y: 28
-                width: 166
-                height: 92
-                text: qsTr("")
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.NoWrap
-                font.pixelSize: 30
-            }
-
             ColumnLayout {
                 id: columnLayout_graphs
-                x: 8
-                y: 0
+                x: 67
+                y: 54
                 width: 100
-                height: 823
+                height: 759
+
+
 
                 ColumnLayout {
-                    id: columnLayout_sub1
+                    id: columnLayout_score
                     width: 100
                     height: 100
 
                     Rectangle {
-                        id: posts1
+                        id: score1
                         width: 1
                         height: 30
                         color: "red"
                     }
 
-Rectangle {
-    id: posts2
-    width: 1
-    height: 30
-    color: "blue"
-}
 
                     Rectangle {
-                        id: posts3
+                        id: score2
+                        width: 1
+                        height: 30
+                        color: "blue"
+                    }
+
+                    Rectangle {
+                        id: score3
                         width: 1
                         height: 30
                         color: "green"
                     }
 
                     Rectangle {
-                        id: posts4
+                        id: score4
+                        width: 1
+                        height: 30
+                        color: "orange"
+                    }
+                }
+
+
+                ColumnLayout {
+                    id: columnLayout_density
+                    width: 100
+                    height: 100
+
+                    Rectangle {
+                        id: density1
+                        width: 1
+                        height: 30
+                        color: "red"
+                    }
+
+                    Rectangle {
+                        id: density2
+                        width: 1
+                        height: 30
+                        color: "blue"
+                    }
+
+                    Rectangle {
+                        id: density3
+                        width: 1
+                        height: 30
+                        color: "green"
+                    }
+
+                    Rectangle {
+                        id: density4
                         width: 1
                         height: 30
                         color: "orange"
@@ -347,9 +379,8 @@ Rectangle {
 
 
                 }
-
                 ColumnLayout {
-                    id: columnLayout_sub2
+                    id: columnLayout_comments
                     width: 100
                     height: 100
 
@@ -382,48 +413,36 @@ Rectangle {
                         color: "orange"
                     }
                 }
-
-
-ColumnLayout {
-    id: columnLayout_sub4
-                    width: 100
-                    height: 100
-
-                    Rectangle {
-                        id: score1
-                        width: 1
-                        height: 30
-                        color: "red"
-                    }
-
-
-                    Rectangle {
-                        id: score2
-                        width: 1
-                        height: 30
-                        color: "blue"
-                    }
-
-                    Rectangle {
-                        id: score3
-                        width: 1
-                        height: 30
-                        color: "green"
-                    }
-
-                    Rectangle {
-                        id: score4
-                        width: 1
-                        height: 30
-                        color: "orange"
-                    }
-}
-
             }
 
 
 
+}
+
+Label {
+    id: tscore
+    x: 14
+    y: 179
+    text: qsTr("Total Score")
+    rotation: 270
+}
+
+Label {
+    id: spc
+            x: 5
+            y: 438
+            text: qsTr("Average Score")
+            rotation: 270
+}
+
+Label {
+    id: comments
+            x: 15
+            y: 688
+            text: qsTr("Comments")
+            rotation: 270
         }
+
 
     }
 

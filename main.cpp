@@ -63,6 +63,10 @@ int main(int argc, char *argv[])
     QObject::connect(&handleinput, SIGNAL(cleargraph()),
                          mainForm, SLOT(cleargraph()));
 
+    QObject::connect(&handleinput, SIGNAL(errorbox(QVariant)),
+                         mainForm, SLOT(errorbox(QVariant)));
+
+
 
 
     return app.exec();

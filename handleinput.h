@@ -29,6 +29,7 @@ signals:  //ignore for now
     void sendGraph4(QVariant gsub, QVariant nscore, QVariant numposts, QVariant numcomments);
     void cleargraph();
     void setSubn(QVariant sub_text, QVariant subn);
+    void errorbox(QVariant errotext);
 
 
 public slots:

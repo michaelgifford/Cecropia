@@ -45,14 +45,14 @@ void HandleInput::handlesubmitSubreddit(const QString &subreddit_data)
 void HandleInput::receivedSubredditExists(QString subreddit, bool exists) {
     if (!exists) {
         // TODO: display errors here
-        qDebug() << "subreddit does not exist";
+        emit errorbox("ERROR: subreddit does not exist");
         return;
     }
 
     qDebug() << "it exists. add it to the vector and redraw";
     if(subreddit_vector.contains(subreddit.toLower())) {
         // TODO: display errors here
-        qDebug() << "that subreddit is already added!";
+        emit errorbox ("ERROR: that subreddit is already added!");
         return;
     }
     else{
@@ -118,11 +118,17 @@ void HandleInput::visualize(const QString keyword_data)
 void HandleInput::handleData(QMap<QString, RedditData> data)
 {
         emit cleargraph();
+
+
+
         if(subreddit_vector.size() >= 1){
+
             qDebug() << "test: this is the score for subreddit NUMERO UNO" << subreddit_vector[0] << data[subreddit_vector[0]].score;
             emit sendGraph1(data[subreddit_vector[0]].numSubscribers, data[subreddit_vector[0]].score, data[subreddit_vector[0]].numPosts, data[subreddit_vector[0]].numComments);
+
         }
         if(subreddit_vector.size() >= 2){
+
             qDebug() << "test: this is the score for subreddit NUMERO DOS" << subreddit_vector[1] << data[subreddit_vector[1]].score;
             emit sendGraph2(data[subreddit_vector[1]].numSubscribers, data[subreddit_vector[1]].score, data[subreddit_vector[1]].numPosts, data[subreddit_vector[1]].numComments);
         }
@@ -136,6 +142,7 @@ void HandleInput::handleData(QMap<QString, RedditData> data)
         }
 
 }
+
 
 
 
