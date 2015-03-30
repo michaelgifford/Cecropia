@@ -3,6 +3,9 @@ import QtQuick.Controls 1.3
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
 
+import "global_item_variables.js" as VarScript
+
+
 ApplicationWindow {
     title: qsTr("Reddt Visualizer")
     width: 1440
@@ -14,17 +17,13 @@ ApplicationWindow {
     signal submitSubreddit(string subreddit_data)
 
     function sendGraph(nscore, numposts, numcomments){
-        messageDialog.show(nscore)
 
-        posts.height = 500
-        score.height = (500*nscore/numposts)
-        comments.height= (500*nscore/numcomments*100)
 
 
     }
 
     function getcolor(){
-        return "red"
+        return VarScript.sub1color
     }
 
 
