@@ -66,7 +66,6 @@ void HandleInput::handleremoveSubreddit(const QString subreddit_remove)
 
     subreddit_vector.removeAll(subreddit_remove);
 
-
     HandleInput::printSubs(subreddit_vector);
 
 }
