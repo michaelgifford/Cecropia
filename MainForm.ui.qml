@@ -324,37 +324,41 @@ GroupBox {
                         color: "red"
                     }
 
-                    Rectangle {
-                        id: score1
-                        width: 5
-                        height: 5
-                        color: "blue"
-                    }
+Rectangle {
+    id: posts2
+    width: 5
+    height: 5
+    color: "#ff0000"
+}
 
                     Rectangle {
-                        id: comments1
-                        width: 5
-                        height: 5
-                        color: "green"
-                    }
-                }
-
-                ColumnLayout {
-                    id: columnLayout_sub2
-                    width: 100
-                    height: 100
-                    Rectangle {
-                        id: posts2
+                        id: posts3
                         width: 5
                         height: 5
                         color: "#ff0000"
                     }
 
                     Rectangle {
-                        id: score2
+                        id: posts4
                         width: 5
                         height: 5
-                        color: "#0000ff"
+                        color: "#ff0000"
+                    }
+
+
+                }
+
+                ColumnLayout {
+                    id: columnLayout_sub2
+                    width: 100
+                    height: 100
+
+
+                    Rectangle {
+                        id: comments1
+                        width: 5
+                        height: 5
+                        color: "green"
                     }
 
                     Rectangle {
@@ -363,17 +367,41 @@ GroupBox {
                         height: 5
                         color: "#008000"
                     }
-                }
 
-                ColumnLayout {
-                    id: columnLayout_sub3
-                    width: 100
-                    height: 100
                     Rectangle {
-                        id: posts3
+                        id: comments3
                         width: 5
                         height: 5
-                        color: "#ff0000"
+                        color: "#008000"
+                    }
+
+                    Rectangle {
+                        id: comments4
+                        width: 5
+                        height: 5
+                        color: "#008000"
+                    }
+                }
+
+
+ColumnLayout {
+    id: columnLayout_sub4
+                    width: 100
+                    height: 100
+
+                    Rectangle {
+                        id: score1
+                        width: 5
+                        height: 5
+                        color: "blue"
+                    }
+
+
+                    Rectangle {
+                        id: score2
+                        width: 5
+                        height: 5
+                        color: "#0000ff"
                     }
 
                     Rectangle {
@@ -384,38 +412,13 @@ GroupBox {
                     }
 
                     Rectangle {
-                        id: comments3
-                        width: 5
-                        height: 5
-                        color: "#008000"
-                    }
-                }
-
-                ColumnLayout {
-                    id: columnLayout_sub4
-                    width: 100
-                    height: 100
-                    Rectangle {
-                        id: posts4
-                        width: 5
-                        height: 5
-                        color: "#ff0000"
-                    }
-
-                    Rectangle {
                         id: score4
                         width: 5
                         height: 5
                         color: "#0000ff"
                     }
+}
 
-                    Rectangle {
-                        id: comments4
-                        width: 5
-                        height: 5
-                        color: "#008000"
-                    }
-                }
             }
 
 

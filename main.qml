@@ -63,9 +63,9 @@ ApplicationWindow {
             }
         }
         function cleargraph(){
-            score1.width = score2.width = score3.width = score4.width =5
-            posts1.width = posts2.width = posts3.width = posts4.width = 5
-            comments1.width = comments2.width = comments3.width = comments4.width = 5
+            score1.width = score2.width = score3.width = score4.width = 1
+            posts1.width = posts2.width = posts3.width = posts4.width = 1
+            comments1.width = comments2.width = comments3.width = comments4.width = 1
         }
 
         function graph1(gsub, nscore, numposts, numcomments){
