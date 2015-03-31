@@ -9,8 +9,8 @@ import QtQuick.Dialogs 1.2
 ApplicationWindow {
     id: mainscreen
     title: qsTr("Reddt Visualizer")
-    width: 1440
-    height: 820
+    width: 1200
+    height: 750
     visible: true
 
     signal submitKeyword(string keyword_data)
@@ -66,7 +66,7 @@ ApplicationWindow {
             score1.width = score2.width = score3.width = score4.width = 1
             density1.width = density2.width = density3.width = density4.width = 1
             comments1.width = comments2.width = comments3.width = comments4.width = 1
-            //loading.text = ""
+
         }
 
 
@@ -74,6 +74,7 @@ ApplicationWindow {
 
             cleargraph()
             loading_box.text = ""
+            error_msgs.text = ""
 
             score1.width = nscore/20
             density1.width = nscore/nsubs*700
@@ -120,6 +121,8 @@ ApplicationWindow {
         {
             submitSubreddit(subreddit.text)
             subreddit.text = ""
+            error_msgs.text = "finding" << subreddit.text
+
         }
 
         removesub1.onClicked:
@@ -179,6 +182,7 @@ ApplicationWindow {
 
             submitKeyword(keyword.text)
             loading_box.text = "LOADING..."
+            error_msgs.text = "LOADING..."
             key_display.text = keyword.text.toLowerCase()
 
             //donedata();

@@ -5,8 +5,8 @@ import QtQuick.Layouts 1.1
 
 
 Item {
-    width: 144
-    height: 840
+    width: 1200
+    height: 750
 
 
     property alias subreddit: subreddit
@@ -15,7 +15,7 @@ Item {
     property alias clear_b: clear_b
     property alias visualize_b: visualize_b
 
-    //property alias key_display: key_display
+    property alias key_display: key_display
 
     property alias sub1: sub1
     property alias sub2: sub2
@@ -56,7 +56,7 @@ Item {
         x: 0
         y: 0
         width: 260
-        height: 840
+        height: 750
         color: "#030a3c"
 
         GroupBox {               //side panel group start
@@ -64,20 +64,20 @@ Item {
             x: 0
             y: 0
             width: 260
-            height: 710
+            height: 750
             flat: false
             title: qsTr("")
 
             Text {
                 id: redditv_title
-                x: 12
-                y: 20
-                width: 154
-                height: 27
+                x: 50
+                y: 19
+                width: 190
+                height: 37
                 color: "#ffffff"
                 text: qsTr("Reddit Visualizer")
                 font.family: "Verdana"
-                font.pixelSize: 19
+                font.pixelSize: 22
             }
 
             GroupBox {
@@ -135,7 +135,7 @@ Item {
 
                        Button {
                            id: removesub1
-                           x: 220
+                           x: 219
                            y: 1
                            width: 19
                            height: 19
@@ -157,7 +157,7 @@ Item {
 
                        Button {
                            id: removesub2
-                           x: 220
+                           x: 219
                            y: 1
                            width: 19
                            height: 19
@@ -178,7 +178,7 @@ Item {
 
                        Button {
                            id: removesub3
-                           x: 220
+                           x: 219
                            y: 1
                            width: 19
                            height: 19
@@ -199,7 +199,7 @@ Item {
 
                        Button {
                            id: removesub4
-                           x: 220
+                           x: 219
                            y: 1
                            width: 19
                            height: 19
@@ -258,10 +258,10 @@ Item {
 
                 Text {
                     id: error_msgs
-                    x: 17
+                    x: 15
                     y: 319
                     width: 210
-                    height: 268
+                    height: 126
                     color: "#fff2f2"
                     text: qsTr("")
                     wrapMode: Text.WordWrap
@@ -272,7 +272,9 @@ Item {
 
 
 
-            } //sidepanel groupbox end
+            }
+
+            //sidepanel groupbox end
 
 
 
@@ -287,16 +289,16 @@ Item {
         id: graphbox_background
         x: 260
         y: 0
-        width: 1440-260
-        height: 840
+        width: 940
+        height: 750
         color: "#ffffff"
 
 GroupBox {
     id: graphbox
             x: 0
             y: 0
-            width: 1180
-            height: 840
+            width: 940
+            height: 750
             title: qsTr("")
 
             ColumnLayout {
@@ -304,7 +306,7 @@ GroupBox {
                 x: 67
                 y: 54
                 width: 100
-                height: 759
+                height: 632
 
 
 
@@ -417,8 +419,8 @@ GroupBox {
 
             Text {
                 id: loading_box
-                x: 462
-                y: 404
+                x: 385
+                y: 311
                 width: 155
                 height: 110
                 text: qsTr("")
@@ -429,12 +431,31 @@ GroupBox {
 
             Text {
                 id: key_display
-                x: 631
-                y: 27
-                width: 226
+                x: 735
+                y: 12
+                width: 143
                 height: 82
-                text: qsTr("")
-                font.pixelSize: 20
+                color: "#000000"
+                text: ""
+                textFormat: Text.AutoText
+                font.family: "Verdana"
+                style: Text.Normal
+                font.italic: false
+                font.bold: true
+                styleColor: "#000000"
+                wrapMode: Text.NoWrap
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+                font.pixelSize: 30
+            }
+
+            Image {
+                id: rlogo
+                x: -224
+                y: 541
+                width: 160
+                height: 160
+                source: "redditlogo.png"
             }
 
 
@@ -444,24 +465,27 @@ GroupBox {
 Label {
     id: tscore
     x: 14
-    y: 179
+    y: 160
     text: qsTr("Total Score")
+    font.pointSize: 14
     rotation: 270
 }
 
 Label {
     id: spc
-            x: 5
-            y: 438
+            x: 4
+            y: 367
             text: qsTr("Average Score")
+            font.pointSize: 14
             rotation: 270
 }
 
 Label {
     id: comments
-            x: 15
-            y: 688
+            x: 24
+            y: 580
             text: qsTr("Comments")
+            font.pointSize: 14
             rotation: 270
         }
 
