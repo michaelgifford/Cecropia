@@ -52,15 +52,19 @@ ApplicationWindow {
                     break;
                 case 1:
                     sub1.text = text
+                    removesub1.visible = true
                     break;
                 case 2:
                     sub2.text = text
+                    removesub2.visible = true
                     break;
                 case 3:
                     sub3.text = text
+                    removesub3.visible = true
                     break;
                 case 4:
                     sub4.text = text
+                    removesub4.visible = true
                     break;
             }
         }
@@ -79,32 +83,32 @@ ApplicationWindow {
             rlogo.source = "regular_logo.png"
             error_msgs.text = ""
 
-            score1.width = nscore/20
-            density1.width = nscore/nsubs*700
-            comments1.width = numcomments/50
+            score1.width = nscore/118
+            density1.width = nscore/nsubs*1000
+            comments1.width = numcomments/48
 
         }
 
         function graph2(nsubs, nscore, numposts, numcomments){
 
-            score2.width = nscore/20
-            density2.width = nscore/nsubs*700
-            comments2.width = numcomments/50
+            score2.width = nscore/18
+            density2.width = nscore/nsubs*1000
+            comments2.width = numcomments/48
 
         }
         function graph3(nsubs, nscore, numposts, numcomments){
 
-            score3.width = nscore/20
-            density3.width = nscore/nsubs*700
-            comments3.width = numcomments/20
+            score3.width = nscore/18
+            density3.width = nscore/nsubs*1000
+            comments3.width = numcomments/48
 
         }
 
         function graph4(nsubs, nscore, numposts, numcomments){
 
-            score4.width = nscore/20
-            density4.width = nscore/nsubs*700
-            comments4.width = numcomments/20
+            score4.width = nscore/18
+            density4.width = nscore/nsubs*1000
+            comments4.width = numcomments/48
         }
 
         function errorbox(errmsg){
@@ -138,6 +142,7 @@ ApplicationWindow {
             sub4.text = ""
 
             removeSubreddit(subText)
+
         }
 
         removesub2.onClicked:

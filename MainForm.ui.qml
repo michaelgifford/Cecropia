@@ -141,8 +141,9 @@ Item {
                            width: 19
                            height: 19
                            text: qsTr("-")
+                           visible: false
                        }
-}
+         }
 
                    Text {
                        id: sub2
@@ -163,6 +164,7 @@ Item {
                            width: 19
                            height: 19
                            text: qsTr("-")
+                           visible: false
                        }
                    }
 
@@ -184,6 +186,7 @@ Item {
                            width: 19
                            height: 19
                            text: qsTr("-")
+                           visible: false
                        }
                    }
 
@@ -205,6 +208,8 @@ Item {
                            width: 19
                            height: 19
                            text: qsTr("-")
+                           checkable: true
+                           visible: false
                        }
                    }
 
