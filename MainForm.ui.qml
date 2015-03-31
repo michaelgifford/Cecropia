@@ -451,11 +451,11 @@ GroupBox {
 
             Image {
                 id: rlogo
-                x: -242
-                y: 541
-                width: 200
-                height: 200
-                source: "redditlogo.png"
+                x: 735
+                y: 401
+                width: 150
+                height: 300
+                source: "regular_logo.png"
             }
 
 

@@ -3,5 +3,8 @@
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
         <file>redditlogo.png</file>
+        <file>finding_logo.png</file>
+        <file>load_logo.png</file>
+        <file>regular_logo.png</file>
     </qresource>
 </RCC>
