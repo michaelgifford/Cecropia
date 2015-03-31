@@ -41,6 +41,7 @@ ApplicationWindow {
 
         function setSubn(text, number){
             console.log("Set text: ", text, " to ", number);
+            error_msgs.text = ""
             switch(number) {
                 case 0:
                     sub1.text = ""
@@ -121,7 +122,7 @@ ApplicationWindow {
         {
             submitSubreddit(subreddit.text)
             subreddit.text = ""
-            error_msgs.text = "finding" << subreddit.text
+            error_msgs.text = ("finding subreddit...")
 
         }
 
