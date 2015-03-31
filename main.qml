@@ -208,6 +208,15 @@ ApplicationWindow {
             cleargraph()
         }
 
+        Image {
+            id: image1
+            x: 8
+            y: 16
+            width: 52
+            height: 51
+            source: "qrc:/qtquickplugin/images/template_image.png"
+        }
+
 
 
 

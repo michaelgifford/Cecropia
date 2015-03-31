@@ -6,5 +6,6 @@
         <file>finding_logo.png</file>
         <file>load_logo.png</file>
         <file>regular_logo.png</file>
+        <file>bargraph.png</file>
     </qresource>
 </RCC>

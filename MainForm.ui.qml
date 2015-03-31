@@ -71,14 +71,14 @@ Item {
 
             Text {
                 id: redditv_title
-                x: 50
-                y: 19
+                x: 55
+                y: 22
                 width: 190
                 height: 37
                 color: "#ffffff"
                 text: qsTr("Reddit Visualizer")
                 font.family: "Verdana"
-                font.pixelSize: 22
+                font.pixelSize: 23
             }
 
             GroupBox {
@@ -459,6 +459,15 @@ GroupBox {
                 source: "regular_logo.png"
             }
 
+            Image {
+                id: image1
+                x: -261
+                y: 12
+                width: 49
+                height: 45
+                source: "bargraph.png"
+            }
+
 
 
 }
@@ -483,12 +492,12 @@ Label {
 
 Label {
     id: comments
-            x: 24
-            y: 580
-            text: qsTr("Comments")
-            font.pointSize: 14
-            rotation: 270
-        }
+    x: 24
+    y: 580
+    text: qsTr("Comments")
+    font.pointSize: 14
+    rotation: 270
+}
 
 
     }
