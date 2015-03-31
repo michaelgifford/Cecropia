@@ -42,6 +42,7 @@ ApplicationWindow {
         function setSubn(text, number){
             console.log("Set text: ", text, " to ", number);
             error_msgs.text = ""
+            rlogo.source = "regular_logo.png"
             switch(number) {
                 case 0:
                     sub1.text = ""
@@ -75,6 +76,7 @@ ApplicationWindow {
 
             cleargraph()
             loading_box.text = ""
+            rlogo.source = "regular_logo.png"
             error_msgs.text = ""
 
             score1.width = nscore/20
@@ -123,6 +125,7 @@ ApplicationWindow {
             submitSubreddit(subreddit.text)
             subreddit.text = ""
             error_msgs.text = ("finding subreddit...")
+            rlogo.source = "finding_logo.png"
 
         }
 
@@ -184,6 +187,7 @@ ApplicationWindow {
             submitKeyword(keyword.text)
             loading_box.text = "LOADING..."
             error_msgs.text = "LOADING..."
+            rlogo.source = "load_logo.png"
             key_display.text = keyword.text.toLowerCase()
 
             //donedata();

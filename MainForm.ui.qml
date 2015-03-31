@@ -48,6 +48,7 @@ Item {
 
     property alias loading_box: loading_box
 
+    property alias rlogo: rlogo
 
 //side panel start
 
